@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jesuyanm.github.io/EmetSolutions/sitemap.xml
+Sitemap: https://emetsolutions.com/sitemap.xml
