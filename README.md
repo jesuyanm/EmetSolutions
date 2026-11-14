@@ -11,7 +11,6 @@ Open the folder in VS Code and start **Live Server** (default `http://127.0.0.1:
 
 - `index.html` home
 - `services.html` services
-- `work-degner.html` case study
 - `about.html` about
 - `contact.html` contact form
 - `privacy.html`, `terms.html` legal

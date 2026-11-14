@@ -705,3 +705,58 @@ section.tight{padding-block:52px}
 .offer .checks li:first-child{border-top:0}
 @media(max-width:860px){.offer{grid-template-columns:1fr;gap:14px;padding:32px 0}.offer .num{padding-top:0}}
 .offer:first-child{border-top:0;padding-top:0}
+
+/* ---- v34: our work, featured project ---- */
+.feature{display:grid;grid-template-columns:1.15fr 1fr;gap:0;border:1px solid var(--line-2);background:var(--bg-2,#11110e)}
+.feature .shot{border:0;height:100%;max-height:none;min-height:360px;object-fit:cover;object-position:center 40%}
+.f-body{padding:40px}
+.f-tag{display:flex;align-items:center;gap:14px;margin:0 0 18px;font:500 .75rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.f-status{color:var(--muted);padding-left:14px;border-left:1px solid var(--line-2)}
+.f-body h2{font-size:clamp(2.2rem,3.8vw,3.2rem);margin:0 0 .25em}
+.f-body .lead{font-size:1.05rem;margin:0 0 22px}
+.f-body .checks li:first-child{border-top:1px solid var(--line)}
+.next{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:20px;padding:26px 32px;border:1px dashed var(--line-2)}
+.next h3{font:400 1.8rem var(--serif);margin:0}
+.next p{margin:.2em 0 0;color:var(--muted)}
+@media(max-width:900px){.feature{grid-template-columns:1fr}.feature .shot{min-height:220px;max-height:260px}.f-body{padding:28px}}
+
+/* ---- v35: browser mockup + client logo ---- */
+.feature{align-items:center}
+.feature .browser{margin:32px 0 32px 32px;border:1px solid var(--line-2);background:#000;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#1a1a16;border-bottom:1px solid var(--line-2)}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:#3a3a33}
+.browser .bar span{margin-left:12px;flex:1;font:500 .7rem var(--mono);color:var(--muted);background:#0f0f0c;padding:4px 10px;letter-spacing:.04em}
+.browser img{display:block;width:100%;height:auto}
+.f-logo{display:block;height:28px;width:auto;margin:0 0 22px}
+@media(max-width:900px){.feature .browser{margin:20px}}
+.f-logo{background:#fff;padding:6px 10px;height:40px;box-sizing:border-box;border-radius:2px}
+
+/* ---- v38: tighter service rows, brighter screen ---- */
+.offer{padding:28px 0}
+.feature .browser img{filter:brightness(1.35) contrast(1.05)}
+
+/* ---- v39: no row numbers, bigger Recent work, smaller lime block, less scrolling ---- */
+.offer{grid-template-columns:1fr 1.3fr;padding:24px 0}
+.offer h2{font-size:clamp(2rem,3.6vw,3rem)}
+.work-h{font-size:clamp(2.4rem,5vw,4rem);margin:0 0 24px}
+#work{padding-block:44px 56px}
+.band,.band.tight{padding-block:52px}
+.band h2{font-size:clamp(2.2rem,5vw,3.8rem);max-width:20ch;margin-bottom:.3em}
+.band p{font-size:1.1rem;margin-bottom:.8em}
+@media(max-width:860px){.offer{grid-template-columns:1fr}}
+
+/* ---- v40: wider pages, wider but shorter Degner card ---- */
+:root{--max:1240px}
+#work .feature{grid-template-columns:1.7fr 1fr}
+#work .feature .browser{margin:24px 0 24px 24px}
+#work .f-body{padding:24px 32px 24px 28px}
+#work .f-logo{height:34px;margin-bottom:14px}
+#work .f-tag{margin-bottom:10px}
+#work .f-body h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.2em}
+#work .f-body .lead{font-size:1rem;margin-bottom:12px}
+#work .checks li{padding:9px 0 9px 32px;font-size:.98rem}
+#work .checks li::before{top:1.1em}
+@media(max-width:900px){#work .feature{grid-template-columns:1fr}#work .feature .browser{margin:20px}}
+
+/* ---- v41: smaller footer wordmark ---- */
+.wordmark{font-size:clamp(3rem,9vw,7.5rem);margin-top:24px}
