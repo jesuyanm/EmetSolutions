@@ -760,3 +760,11 @@ section.tight{padding-block:52px}
 
 /* ---- v41: smaller footer wordmark ---- */
 .wordmark{font-size:clamp(3rem,9vw,7.5rem);margin-top:24px}
+
+/* ---- v42: solid header, larger nav ---- */
+header.site{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+nav.menu a{font-size:.9rem;padding:8px 16px}
+nav.menu a.cta{padding:13px 24px}
+.nav .logo{font-size:.88rem}
+.nav .logo-mark{font-size:3.2rem}
+@media(max-width:960px){nav.menu a{font-size:.95rem}}
