@@ -231,3 +231,48 @@ addEventListener('hashchange', openFromHash);
     setTimeout(() => { busy = false; }, 4600);
   });
 })();
+
+// about: letter story steps with scroll; statement lights up word by word
+(function aboutMotion() {
+  const story = document.querySelector('.a-story');
+  if (story) {
+    const upd = () => {
+      if (innerWidth <= 760) return;
+      const r = story.getBoundingClientRect();
+      const pane = innerHeight - 88;
+      const total = story.offsetHeight - pane;
+      const p = Math.min(0.999, Math.max(0, (88 - r.top) / total));
+      story.dataset.step = Math.floor(p * 3);
+    };
+    addEventListener('scroll', upd, { passive: true });
+    addEventListener('resize', upd);
+    upd();
+  }
+  const big = document.querySelector('.a-big');
+  if (big && !reduce) {
+    const wrap = (node) => {
+      [...node.childNodes].forEach((n) => {
+        if (n.nodeType === 3) {
+          const f = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach((s) => {
+            if (!s) return;
+            if (/^\s+$/.test(s)) f.appendChild(document.createTextNode(s));
+            else { const w = document.createElement('span'); w.className = 'w'; w.textContent = s; f.appendChild(w); }
+          });
+          node.replaceChild(f, n);
+        } else if (n.nodeType === 1) wrap(n);
+      });
+    };
+    wrap(big);
+    const words = big.querySelectorAll('.w');
+    const update = () => {
+      const r = big.getBoundingClientRect(), vh = innerHeight;
+      const p = Math.min(1, Math.max(0, (vh * 0.92 - r.top) / (vh * 0.5)));
+      const k = Math.round(p * words.length);
+      words.forEach((w, i) => w.classList.toggle('on', i < k));
+    };
+    addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+  }
+})();
