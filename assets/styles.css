@@ -1064,3 +1064,17 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 .a-wsvg .adot{fill:var(--accent);opacity:.55}
 .band::after{font-size:clamp(4rem,15vw,15rem);right:2%;bottom:2%;color:rgba(11,11,9,.1)}
 
+
+/* ---- about: who is behind it ---- */
+.a-me{padding-block:96px;border-top:1px solid var(--line)}
+.a-me-grid{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:64px;align-items:center}
+.a-me-photo{margin:0;aspect-ratio:4/5;border:1px solid var(--line-2);background:var(--bg-2,#11110e);overflow:hidden;position:relative}
+.a-me-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.a-me-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 clamp(7rem,16vw,12rem)/1 var(--serif);letter-spacing:-.04em;color:var(--paper);background:radial-gradient(70% 60% at 50% 55%,rgba(212,255,58,.14),transparent 70%)}
+.a-me-ph i{color:var(--accent);font-style:normal}
+.a-me-text h2{font:400 clamp(2rem,4vw,3.4rem)/1.02 var(--serif);letter-spacing:-.03em;margin:0 0 .5em;color:var(--paper)}
+.a-me-text h2 em{color:var(--accent)}
+.a-me-text p:not(.eyebrow){max-width:56ch;color:var(--soft);margin:0 0 1em}
+.a-me-tags{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:1.4em 0 1.8em;padding:0}
+.a-me-tags li{border:1px solid var(--line-2);padding:7px 14px;font:500 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--paper)}
+@media(max-width:760px){.a-me{padding-block:64px}.a-me-grid{grid-template-columns:1fr;gap:32px}.a-me-photo{max-width:320px}}
