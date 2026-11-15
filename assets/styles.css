@@ -605,9 +605,16 @@ html.wiping::after{content:"";position:fixed;inset:0;background:var(--accent);z-
 /* ---- v20: intro ---- */
 .intro{display:none}
 html.introing{overflow:hidden}
-html.introing .intro{position:fixed;inset:0;z-index:400;background:var(--bg);display:grid;place-items:center;animation:introOut .75s 4.35s cubic-bezier(.7,0,.2,1) forwards;cursor:pointer}
-html.introing.skipping .intro{animation:introOut .4s cubic-bezier(.7,0,.2,1) forwards}
-@keyframes introOut{to{transform:translateY(-100%)}}
+html.introing .intro{position:fixed;inset:0;z-index:400;background:var(--bg);display:grid;place-items:center;animation:introOut 1s 4.35s ease-in-out forwards;cursor:pointer}
+html.introing.skipping .intro{animation:introOut .6s ease-in-out forwards}
+.intro-word{will-change:transform}
+@keyframes introOut{to{background:transparent}}
+html.introing .intro svg,html.introing .intro-hint{animation:introFade .4s 4.35s forwards}
+html.introing .intro-bar{animation:introBar 4.35s linear forwards,introFade .4s 4.35s forwards}
+html.introing.skipping .intro svg,html.introing.skipping .intro-hint{animation:introFade .3s forwards}
+html.introing.skipping .intro-bar{animation:introFade .3s forwards}
+@keyframes introFade{to{opacity:0}}
+html.introing header.site .logo{visibility:hidden}
 .intro-inner{text-align:center}
 .intro svg{width:min(380px,72vw);height:auto;overflow:visible;display:block;margin:0 auto}
 .intro .glyph{font:400 190px 'Frank Ruhl Libre',serif;fill:var(--accent);fill-opacity:0;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:900;stroke-dashoffset:900;animation:glyphDraw 1.1s cubic-bezier(.5,0,.2,1) forwards,glyphFill .5s ease forwards}
