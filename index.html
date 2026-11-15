@@ -71,7 +71,7 @@
   <div class="intro-bar"></div>
   <span class="intro-hint">Click to skip</span>
 </div>
-<script>(function(){var h=document.documentElement;if(!h.classList.contains('introing'))return;var done=false;function end(){if(done)return;done=true;h.classList.remove('introing','skipping');try{sessionStorage.setItem('intro','1')}catch(e){}}var t=setTimeout(end,4200);function skip(){if(done)return;clearTimeout(t);h.classList.add('skipping');setTimeout(end,420)}document.addEventListener('click',skip,{once:true});document.addEventListener('keydown',skip,{once:true})})();</script>
+<script>(function(){var h=document.documentElement;if(!h.classList.contains('introing'))return;var done=false;function end(){if(done)return;done=true;h.classList.remove('introing','skipping');try{sessionStorage.setItem('intro','1')}catch(e){}}var t=setTimeout(end,5100);function skip(){if(done)return;clearTimeout(t);h.classList.add('skipping');setTimeout(end,420)}document.addEventListener('click',skip,{once:true});document.addEventListener('keydown',skip,{once:true})})();</script>
 <header class="site"><div class="wrap nav">
   <a class="logo" href="index.html"><span class="logo-mark">emet<span>.</span></span>solutions</a>
   <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">Menu</button>

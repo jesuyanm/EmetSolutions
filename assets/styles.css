@@ -605,21 +605,23 @@ html.wiping::after{content:"";position:fixed;inset:0;background:var(--accent);z-
 /* ---- v20: intro ---- */
 .intro{display:none}
 html.introing{overflow:hidden}
-html.introing .intro{position:fixed;inset:0;z-index:400;background:var(--bg);display:grid;place-items:center;animation:introOut .75s 3.45s cubic-bezier(.7,0,.2,1) forwards;cursor:pointer}
+html.introing .intro{position:fixed;inset:0;z-index:400;background:var(--bg);display:grid;place-items:center;animation:introOut .75s 4.35s cubic-bezier(.7,0,.2,1) forwards;cursor:pointer}
 html.introing.skipping .intro{animation:introOut .4s cubic-bezier(.7,0,.2,1) forwards}
 @keyframes introOut{to{transform:translateY(-100%)}}
 .intro-inner{text-align:center}
 .intro svg{width:min(380px,72vw);height:auto;overflow:visible;display:block;margin:0 auto}
 .intro .glyph{font:400 190px 'Frank Ruhl Libre',serif;fill:var(--accent);fill-opacity:0;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:900;stroke-dashoffset:900;animation:glyphDraw 1.1s cubic-bezier(.5,0,.2,1) forwards,glyphFill .5s ease forwards}
-.intro .g1{animation-delay:.1s,1.15s}.intro .g2{animation-delay:.35s,1.25s}.intro .g3{animation-delay:.6s,1.35s}
+.intro .g1{animation-delay:2s,3.05s}.intro .g2{animation-delay:2.25s,3.15s}.intro .g3{animation-delay:2.5s,3.25s}
 @keyframes glyphDraw{to{stroke-dashoffset:0}}
 @keyframes glyphFill{to{fill-opacity:1}}
-.intro-word{margin-top:14px;font:400 3.4rem/1 var(--serif);letter-spacing:-.03em;color:var(--paper)}
-.il{display:inline-block;opacity:0;transform:translateY(16px);animation:introRise .55s ease forwards;animation-delay:1.45s}
+.intro-word{margin-top:14px;font:400 3.4rem/1 var(--serif);letter-spacing:-.03em;color:var(--paper);--w:min(380px,72vw);--s:1.9;transform:translateY(calc(var(--w)*-.338 - 7px)) scale(var(--s));animation:wordSettle .9s 1.35s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes wordSettle{to{transform:none}}
+@media(max-width:600px){.intro-word{--s:1.25}}
+.il{display:inline-block;opacity:0;transform:translateY(16px);animation:introRise .55s ease forwards;animation-delay:calc(.15s + var(--i)*.07s)}
 .intro-word i{color:var(--accent);font-style:normal}
 .intro-word small{font:500 .8rem var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-left:12px}
 @keyframes introRise{to{opacity:1;transform:none}}
-.intro-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);animation:introBar 3.45s linear forwards}
+.intro-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(0);animation:introBar 4.35s linear forwards}
 @keyframes introBar{to{transform:scaleX(1)}}
 .intro-hint{position:absolute;right:calc(28px + env(safe-area-inset-right));bottom:calc(26px + env(safe-area-inset-bottom));font:500 .8rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 html.introing .hero,html.introing .hero *{animation-play-state:paused!important}
@@ -849,7 +851,7 @@ footer.site{padding-block:52px 22px}
 /* ---- v50: intro glyphs trace only the outer edge (cover hides overlapping inner contours) ---- */
 .intro .glyph{stroke-width:3.2}
 .intro .cover{font:400 190px 'Frank Ruhl Libre',serif;fill:var(--bg);stroke:none;animation:coverFill .5s ease forwards}
-.intro .c1{animation-delay:1.15s}.intro .c2{animation-delay:1.25s}.intro .c3{animation-delay:1.35s}
+.intro .c1{animation-delay:3.05s}.intro .c2{animation-delay:3.15s}.intro .c3{animation-delay:3.25s}
 @keyframes coverFill{to{fill:var(--accent)}}
 
 /* ---- v51: about letters as SVG; mask hides the font's overlapping inner contours, outline unchanged ---- */
