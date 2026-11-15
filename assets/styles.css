@@ -861,3 +861,6 @@ footer.site{padding-block:52px 22px}
 [data-step="0"] .a-wsvg .f1,[data-step="1"] .a-wsvg .f2,[data-step="2"] .a-wsvg .f3{opacity:1;transform:translateY(-12px)}
 [data-step="0"] .a-wsvg .o1,[data-step="1"] .a-wsvg .o2,[data-step="2"] .a-wsvg .o3{opacity:0}
 @media(max-width:760px){.a-wsvg{position:static;transform:none;width:260px;margin:0 24px}.a-wsvg .fl{opacity:1;transform:none}.a-wsvg .ol{opacity:0}}
+
+/* ---- v52: no section sign on labels ---- */
+.eyebrow::before{content:none}

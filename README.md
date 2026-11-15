@@ -20,7 +20,6 @@ Open the folder in VS Code and start **Live Server** (default `http://127.0.0.1:
 - `assets/styles.css` all styles
 - `assets/site.js` menu, reveal, animations, form
 - `assets/fonts/` self-hosted fonts
-- `logos/` logo option mockups
 
 ## Before launch
 

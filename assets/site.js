@@ -31,6 +31,7 @@ if (form) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (form.website && form.website.value) return; // honeypot
+    if (!form.checkValidity()) { form.reportValidity(); return; }
     const key = form.access_key.value;
     if (!key || key.startsWith('YOUR_')) {
       status.textContent = 'The form is not connected yet. Please email us directly.';
