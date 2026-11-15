@@ -1007,3 +1007,4 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 .hero-proof{margin-top:20px;padding-top:14px}
 .hero::after{bottom:20px}
 }
+@media(min-width:961px){.hero{padding-bottom:110px}.hero::after{bottom:64px}}
