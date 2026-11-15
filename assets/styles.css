@@ -144,7 +144,6 @@ nav.menu a.cta:hover{background:var(--paper);color:var(--accent-ink)}
 .band p{color:rgba(11,11,9,.78);max-width:46ch;font-size:1.25rem}
 .band .btn{background:var(--accent-ink);color:var(--accent);border-color:var(--accent-ink);margin-top:.6em}
 .band .btn:hover{background:var(--paper);color:var(--accent-ink);box-shadow:6px 6px 0 var(--accent-ink)}
-.band::after{content:"אמת";position:absolute;right:-1%;bottom:-18%;font:400 clamp(14rem,36vw,34rem)/1 var(--hebrew);color:rgba(11,11,9,.09);pointer-events:none;direction:rtl}
 
 /* service detail */
 .svc{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;padding:56px 0;border-bottom:1px solid var(--line);align-items:start;scroll-margin-top:calc(90px + env(safe-area-inset-top));position:relative}
@@ -864,8 +863,8 @@ footer.site{padding-block:52px 22px}
 
 /* ---- v51: about letters as SVG; mask hides the font's overlapping inner contours, outline unchanged ---- */
 .a-wsvg{position:absolute;left:var(--pad,24px);top:50%;transform:translateY(-50%);width:calc(50% - 20px);max-height:70vh;height:auto;overflow:visible;user-select:none}
-.a-wsvg text{font-family:var(--hebrew);font-size:520px;text-anchor:middle}
-.a-wsvg mask text{font-family:var(--hebrew);font-size:520px;text-anchor:middle}
+.a-wsvg text{font-family:var(--serif);font-size:520px;text-anchor:middle}
+.a-wsvg mask text{font-family:var(--serif);font-size:520px;text-anchor:middle}
 .a-wsvg .ol{fill:none;stroke:rgba(236,231,220,.28);stroke-width:3px;vector-effect:non-scaling-stroke;transition:opacity .6s}
 .a-wsvg .fl{fill:var(--accent);opacity:0;transition:opacity .6s,transform .7s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 0 30px rgba(212,255,58,.35))}
 [data-step="0"] .a-wsvg .f1,[data-step="1"] .a-wsvg .f2,[data-step="2"] .a-wsvg .f3{opacity:1;transform:translateY(-12px)}
@@ -1019,3 +1018,7 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 .hero::after{bottom:22px}
 }
 @media(min-width:961px){.hero::after{bottom:42px}.hero{padding-bottom:96px}}
+
+/* ---- yanmife: intro draws the name in three syllables (yan . mi . fe), same outline-then-fill as before ---- */
+.intro .glyph,.intro .cover{font:400 76px var(--serif);letter-spacing:-.02em}
+.intro .glyph{stroke-width:1.6}

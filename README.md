@@ -1,6 +1,6 @@
-# emet. Solutions
+# yanmife.
 
-Marketing website for Emet Solutions: websites, internal tools, analytics and SEO.
+Marketing website for Yanmife: websites, internal tools, analytics and SEO.
 Hand-built static HTML, CSS and JS. No build step.
 
 ## Run locally
