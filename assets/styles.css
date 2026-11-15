@@ -874,8 +874,21 @@ footer.site{padding-block:52px 22px}
 .devices .browser{margin:0}
 .devices img{filter:brightness(1.3) contrast(1.05)}
 .devices .browser img{display:block;width:100%;height:auto}
-.devices .phone{position:absolute;right:0;bottom:0;width:20%;padding:16px 5px 5px;background:#1a1a16;border:1px solid var(--line-2);border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,.65);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.devices .phone::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:18%;height:4px;background:#3a3a33;border-radius:4px}
-.devices .phone img{display:block;width:100%;height:auto;border-radius:0 0 15px 15px;border-top:1px solid var(--line-2)}
+.devices .phone{position:absolute;right:0;bottom:0;width:20%;padding:5px;background:#1a1a16;border:1px solid var(--line-2);border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,.65);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.devices .phone::before{content:"";position:absolute;top:5px;left:50%;transform:translateX(-50%);width:42%;height:4.2%;background:#1a1a16;border-radius:0 0 12px 12px;z-index:2}
+.devices .phone::after{content:"";position:absolute;top:calc(5px + 1.3%);left:50%;transform:translateX(-50%);width:16%;height:3px;background:#3a3a33;border-radius:3px;z-index:3}
+.devices .phone img{display:block;width:100%;height:auto;border-radius:15px}
 .teaser:hover .devices .phone{transform:translateY(-10px)}
 @media(max-width:900px){.feature .devices{margin:24px 20px}}
+
+/* ---- v55: desktop monitor on a stand (dark, matches the phone) ---- */
+.devices{padding:0 12% 0 0}
+.monitor{position:relative}
+.mon-screen{position:relative;background:#1a1a16;border:1px solid var(--line-2);border-bottom:0;border-radius:14px 14px 0 0;padding:2.8% 2.6% 0}
+.mon-screen::before{content:"";position:absolute;top:1.1%;left:50%;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#3a3a33}
+.mon-screen img{display:block;width:100%;height:auto;border-radius:2px}
+.mon-chin{height:0;padding-bottom:4.6%;background:#1a1a16;border:1px solid var(--line-2);border-top:0;border-radius:0 0 14px 14px;box-shadow:0 26px 50px rgba(0,0,0,.5)}
+.mon-neck{width:15%;height:0;padding-bottom:8%;margin:0 auto;background:linear-gradient(#121210,#1f1f1b);clip-path:polygon(14% 0,86% 0,100% 100%,0 100%)}
+.mon-foot{width:30%;height:9px;margin:0 auto;background:#22221d;border:1px solid var(--line-2);border-radius:8px 8px 3px 3px;box-shadow:0 16px 28px rgba(0,0,0,.6)}
+.teaser:hover .monitor{transform:translateY(-4px)}
+.monitor{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
