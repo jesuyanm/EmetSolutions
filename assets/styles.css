@@ -905,3 +905,105 @@ footer.site{padding-block:52px 22px}
 
 /* ---- iOS: page draws behind status bar / island and home indicator ---- */
 footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
+
+/* ---- hero motion, calmer: letters light up start -> middle -> end ---- */
+.hero-art .sq,.hero-art .orbit2{display:none}
+.hero-art *{stroke-opacity:.22}
+.hero-art .ticks{stroke-opacity:.3}
+.hero-art .r1{animation-duration:120s}
+.hero-art .r2{animation-duration:200s}
+.hero-art .r3{animation-duration:320s}
+.hero-art .orbit{animation-duration:30s}
+.hero-art .dot{filter:drop-shadow(0 0 6px rgba(212,255,58,.6))}
+.letters-row div:nth-child(1) b{animation:rise .7s .5s both,lit 7.5s 1.6s ease-in-out infinite}
+.letters-row div:nth-child(2) b{animation:rise .7s .65s both,lit 7.5s 4.1s ease-in-out infinite}
+.letters-row div:nth-child(3) b{animation:rise .7s .8s both,lit 7.5s 6.6s ease-in-out infinite}
+.letters-row small{transition:color .4s}
+@keyframes lit{0%,28%,100%{color:var(--paper);text-shadow:none}6%,22%{color:var(--accent);text-shadow:0 0 28px rgba(212,255,58,.35)}}
+@media(prefers-reduced-motion:reduce){.hero-art *,.letters-row b{animation:none!important}}
+
+/* ---- hero polish ---- */
+.hero h1{word-spacing:.1em;letter-spacing:-.04em}
+.hero .letters-row small{line-height:1.5}
+.hero-proof{display:flex;align-items:center;gap:12px;margin-top:30px;max-width:520px;padding-top:22px;border-top:1px solid var(--line-2);color:var(--soft);text-decoration:none;font-size:.95rem;line-height:1.5;transition:color .2s}
+.hero-proof b{color:var(--paper);font-weight:600}
+.hero-proof i{font-style:normal;color:var(--accent);transition:transform .2s}
+.hero-proof:hover{color:var(--paper)}
+.hero-proof:hover i{transform:translateX(4px)}
+.hp-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);animation:ping 2.4s ease-out infinite}
+.hero .letters-row small{letter-spacing:.06em;font-size:.72rem;padding:0 4px}
+.hero-proof{margin-top:22px;padding-top:16px}
+.hero-proof{max-width:620px}
+
+/* ---- hero card: simpler, bigger letters ---- */
+.hero .letters{padding:40px 36px 30px}
+.hero .letters-row b{font-size:clamp(5rem,8vw,7.6rem)}
+.hero .letters-row small{font-size:.74rem;margin-top:14px}
+.hero .letters .l-foot{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:22px 0 0;padding-top:0;border-top:0;font-size:1.05rem}
+.hero .letters .l-foot span{font:400 1.7rem var(--hebrew);color:var(--accent)}
+.hero .letters .l-foot i{font-family:var(--serif);color:var(--soft)}
+
+/* ---- hero right: real work on devices ---- */
+.hero-device{display:block;text-decoration:none;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.hero-device:hover{transform:translateY(-6px)}
+.hero-device:hover .monitor{transform:none}
+.hero-device .devices{animation:rise .9s .5s both}
+.hero-device .devices{padding:0 14% 0 0;filter:drop-shadow(0 40px 60px rgba(0,0,0,.5))}
+.hero-device .phone{width:22%}
+@media(max-width:960px){.hero-device{margin-top:40px}}
+
+/* ---- hero mockup: Emet's own offer on the screens ---- */
+.hero-device .mon-screen{padding:2.8% 2.6% 0}
+.hs{container-type:inline-size;position:relative;aspect-ratio:16/9;background:#0d0d0b;border-radius:2px;overflow:hidden;text-align:left}
+.hs-in{height:100%;padding:4cqw 5cqw;display:flex;flex-direction:column;gap:5cqw;box-sizing:border-box}
+.hs *{margin:0;padding:0}
+.hs-nav{display:flex;align-items:center;gap:3.2cqw}
+.hs-nav b{font:400 4.6cqw/1 var(--serif);letter-spacing:-.04em;color:var(--paper);margin-right:auto}
+.hs-nav b span{color:var(--accent)}
+.hs-nav i{width:6cqw;height:1.1cqw;border-radius:9px;background:rgba(236,231,220,.22)}
+.hs-nav u{width:11cqw;height:4.4cqw;background:var(--accent);border-radius:1px}
+.hs-body{display:grid;grid-template-columns:1.25fr 1fr;gap:5cqw;align-items:center;flex:1}
+.hs h4{font:400 8cqw/1 var(--serif);letter-spacing:-.04em;color:var(--paper)}
+.hs h4 em{color:var(--accent)}
+.hs-copy p{height:1.2cqw;width:84%;margin-top:4cqw;border-radius:9px;background:rgba(236,231,220,.2)}
+.hs-copy p.s{width:60%;margin-top:1.8cqw}
+.hs-btn{display:block;width:17cqw;height:5.2cqw;margin-top:4.4cqw;background:var(--accent);border-radius:1px}
+.hs-side{display:grid;gap:2.6cqw}
+.hs-card{border:1px solid rgba(236,231,220,.16);background:rgba(236,231,220,.04);border-radius:3px;padding:2.2cqw 2.6cqw}
+.hs-card small{display:block;font:500 2.1cqw var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.6cqw}
+.hs-card svg{display:block;width:100%;height:auto;overflow:visible}
+.hs-card .line{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:1;animation:hsdraw 3.2s 1s ease-out forwards,hsloop 0s 5s}
+.hs-card .area{fill:rgba(212,255,58,.12);opacity:0;animation:hsfade 1.2s 2.4s ease forwards}
+.hs-card circle{fill:var(--accent);opacity:0;animation:hsfade .4s 4s forwards}
+.hs-card .line{pathLength:1}
+.hs-res{display:grid;gap:1.4cqw}
+.hs-res i{display:block;height:1.4cqw;border-radius:9px;background:rgba(236,231,220,.18)}
+.hs-res i:nth-child(2){width:80%}
+.hs-res i.top{background:var(--accent);width:100%;height:2.2cqw;order:-1;animation:hsrank 6s 1.4s ease-in-out infinite}
+@keyframes hsdraw{to{stroke-dashoffset:0}}
+@keyframes hsfade{to{opacity:1}}
+@keyframes hsrank{0%,100%{transform:translateY(0)}}
+.hs-m{aspect-ratio:9/19}
+.hs-m .hs-in{padding:12cqw 9cqw 8cqw;gap:9cqw}
+.hs-m .hs-nav{gap:0}
+.hs-m .hs-nav b{font-size:12cqw}
+.hs-m .hs-nav u{width:22cqw;height:9cqw}
+.hs-m h4{font-size:19cqw}
+.hs-m p{height:2.4cqw;width:90%;margin-top:7cqw;border-radius:9px;background:rgba(236,231,220,.2)}
+.hs-m .hs-btn{width:44cqw;height:12cqw;margin-top:8cqw}
+.hs-m .hs-card{margin-top:auto;padding:6cqw}
+.hs-m .hs-card small{font-size:5.4cqw;margin-bottom:4cqw}
+.hero-device .phone img{display:none}
+@media(prefers-reduced-motion:reduce){.hs-card .line{animation:none;stroke-dashoffset:0}.hs-card .area,.hs-card circle{animation:none;opacity:1}}
+.hs-res i:nth-child(3){display:none}
+.hs-in{padding-bottom:5.5cqw}
+
+/* ---- hero: compact so the scroll cue stays on screen ---- */
+@media(min-width:961px){
+.hero{padding-block:28px 72px;min-height:calc(100svh - 73px);max-height:calc(100svh - 73px)}
+.hero h1{font-size:clamp(2.8rem,5vw,4.9rem)}
+.hero .lead{margin-top:18px}
+.hero .btn-row{margin-top:24px}
+.hero-proof{margin-top:20px;padding-top:14px}
+.hero::after{bottom:20px}
+}
