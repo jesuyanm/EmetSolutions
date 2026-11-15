@@ -1034,3 +1034,32 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 @keyframes slideL{from{transform:translateX(-70px);opacity:0}}
 @keyframes slideR{from{transform:translateX(70px);opacity:0}}
 @keyframes pop{40%{transform:scale(1.12)}}
+
+/* ---- yanmife: pronunciation where the Hebrew letters used to be ---- */
+.a-wsvg text,.a-wsvg mask text{font-size:150px;letter-spacing:-.02em}
+.band::after{content:"yahn · mee · feh";white-space:nowrap;position:absolute;right:3%;bottom:4%;font:400 clamp(2.4rem,8vw,7.5rem)/1 var(--serif);letter-spacing:-.03em;color:rgba(11,11,9,.09);pointer-events:none}
+
+/* ---- yanmife: one-line intro, yahn . mee . feh, big and tight ---- */
+.intro svg{width:min(780px,94vw)}
+.intro .glyph,.intro .cover{font:400 100px var(--serif);letter-spacing:-.03em}
+.intro .glyph{stroke-width:2}
+.intro-word{--w:min(780px,94vw);transform:translateY(calc(var(--w)*-.1146 - 7px)) scale(var(--s));margin-top:6px}
+.intro .idot{fill:var(--accent);transform-box:fill-box;transform-origin:center;animation:dotIn .4s cubic-bezier(.2,.8,.2,1) backwards}
+.intro .d1{animation-delay:3.2s}.intro .d2{animation-delay:3.4s}
+@keyframes dotIn{from{transform:scale(0);opacity:0}}
+
+/* ---- yanmife: back to the original calm intro motion (draw outline, then fill). No slide, no pop ---- */
+.intro .g1{animation:glyphDraw 1.1s cubic-bezier(.5,0,.2,1) 2s forwards,glyphFill .5s ease 3.05s forwards}
+.intro .g2{animation:glyphDraw 1.1s cubic-bezier(.5,0,.2,1) 2.25s forwards,glyphFill .5s ease 3.15s forwards}
+.intro .g3{animation:glyphDraw 1.1s cubic-bezier(.5,0,.2,1) 2.5s forwards,glyphFill .5s ease 3.25s forwards}
+.intro .c1{animation:coverFill .5s ease 3.05s forwards}
+.intro .c2{animation:coverFill .5s ease 3.15s forwards}
+.intro .c3{animation:coverFill .5s ease 3.25s forwards}
+.intro .idot{animation:dotFade .5s ease backwards;transform:none}
+.intro .d1{animation-delay:3.15s}.intro .d2{animation-delay:3.3s}
+@keyframes dotFade{from{opacity:0}}
+
+/* ---- yanmife: bigger yahn . mee . feh elsewhere ---- */
+.a-wsvg text,.a-wsvg mask text{font-size:190px;text-anchor:start}
+.a-wsvg .adot{fill:var(--accent);opacity:.55}
+.band::after{font-size:clamp(4rem,15vw,15rem);right:2%;bottom:2%;color:rgba(11,11,9,.1)}
