@@ -47,7 +47,7 @@ if (form) {
       const data = await res.json();
       if (data.success) {
         form.reset();
-        status.textContent = 'Thanks. We will reply within one business day.';
+        status.textContent = 'Thanks. We will reply within two business days.';
       } else {
         status.textContent = 'Something went wrong. Please email us directly.';
       }
