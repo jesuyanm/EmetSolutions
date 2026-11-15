@@ -1008,3 +1008,14 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 .hero::after{bottom:20px}
 }
 @media(min-width:961px){.hero{padding-bottom:110px}.hero::after{bottom:64px}}
+
+/* ---- hero: back to roomy spacing, scroll cue at the bottom ---- */
+@media(min-width:961px){
+.hero{padding-block:40px 80px}
+.hero h1{font-size:clamp(3rem,5.9vw,5.9rem)}
+.hero .lead{margin-top:24px}
+.hero .btn-row{margin-top:32px}
+.hero-proof{margin-top:26px;padding-top:18px}
+.hero::after{bottom:22px}
+}
+@media(min-width:961px){.hero::after{bottom:42px}.hero{padding-bottom:96px}}
