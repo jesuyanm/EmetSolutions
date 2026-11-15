@@ -26,4 +26,4 @@ Open the folder in VS Code and start **Live Server** (default `http://127.0.0.1:
 - Add a Web3Forms access key in `contact.html` (`YOUR_WEB3FORMS_ACCESS_KEY`).
 - Fill the placeholders in `privacy.html` and `terms.html`.
 - Add the Cloudflare analytics token (commented snippet at the bottom of each page).
-- Confirm the live domain used in canonical/OG tags and `sitemap.xml`.
+- When the real domain is live, replace `https://jesuyanm.github.io/EmetSolutions` with it in every page's canonical/OG/Twitter tags, `sitemap.xml` and `robots.txt`.
