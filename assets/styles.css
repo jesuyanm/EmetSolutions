@@ -1063,3 +1063,4 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 .a-wsvg text,.a-wsvg mask text{font-size:190px;text-anchor:start}
 .a-wsvg .adot{fill:var(--accent);opacity:.55}
 .band::after{font-size:clamp(4rem,15vw,15rem);right:2%;bottom:2%;color:rgba(11,11,9,.1)}
+
