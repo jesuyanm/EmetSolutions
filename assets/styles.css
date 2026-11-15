@@ -864,3 +864,6 @@ footer.site{padding-block:52px 22px}
 
 /* ---- v52: no section sign on labels ---- */
 .eyebrow::before{content:none}
+
+/* ---- v53: every lime band matches the Services one (two-line headline) ---- */
+.band h2{max-width:13ch}
