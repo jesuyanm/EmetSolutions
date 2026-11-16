@@ -1037,7 +1037,7 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 
 /* ---- yanmife: pronunciation where the Hebrew letters used to be ---- */
 .a-wsvg text,.a-wsvg mask text{font-size:150px;letter-spacing:-.02em}
-.band::after{content:"yahn · mee · feh · ah · deh";white-space:nowrap;position:absolute;right:3%;bottom:4%;font:400 clamp(2.4rem,8vw,7.5rem)/1 var(--serif);letter-spacing:-.03em;color:rgba(11,11,9,.09);pointer-events:none}
+.band::after{content:"yahn · mee · ah · deh";white-space:nowrap;position:absolute;right:3%;bottom:4%;font:400 clamp(2.4rem,8vw,7.5rem)/1 var(--serif);letter-spacing:-.03em;color:rgba(11,11,9,.09);pointer-events:none}
 
 /* ---- yanmife: one-line intro, yahn . mee . feh, big and tight ---- */
 .intro svg{width:min(780px,94vw)}
@@ -1103,8 +1103,10 @@ footer.site{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
 @media(max-width:900px){.a-duo-grid{grid-template-columns:1fr;gap:56px}}
 @media(max-width:760px){.a-me{padding-block:52px}.a-duo{padding-block:56px}}
 
-/* ---- YanmifeAde: five-syllable intro (yahn . mee . feh . ah . deh) ---- */
-.intro-word{transform:translateY(calc(var(--w)*-.0743 - 7px)) scale(var(--s))}
-.intro .g4{animation-delay:2.75s,3.35s}.intro .g5{animation-delay:3s,3.45s}
-.intro .c4{animation-delay:3.35s}.intro .c5{animation-delay:3.45s}
-.intro .d3{animation-delay:3.4s}.intro .d4{animation-delay:3.5s}
+/* ---- YanmiAde: four-syllable intro (yahn . mee . ah . deh) ---- */
+.intro-word{transform:translateY(calc(var(--w)*-.0887 - 7px)) scale(var(--s))}
+.intro .g4{animation-delay:2.75s,3.35s}
+.intro .c4{animation-delay:3.35s}
+.intro .d3{animation-delay:3.4s}
+
+.a-name{color:var(--soft);margin:-.2em 0 1em}
