@@ -1,6 +1,6 @@
-# YanmiAde
+# yanmiAde
 
-Marketing website for YanmiAde: websites, internal tools, analytics and SEO.
+Marketing website for yanmiAde: websites, internal tools, analytics and SEO.
 Hand-built static HTML, CSS and JS. No build step.
 
 ## Run locally
