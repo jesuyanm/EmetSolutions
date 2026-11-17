@@ -672,7 +672,3 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
 }
 
 @media(min-width:901px){footer.site .fgrid>div:nth-child(1),footer.site .fgrid>div:nth-child(2){align-self:start;margin-bottom:0}footer.site>.wrap{align-items:end}}
-
-/* footer wordmark: fills lime with a dark outline on hover */
-footer.site .wordmark{transition:color .35s var(--ease),-webkit-text-stroke-color .35s var(--ease)}
-@media(hover:hover) and (pointer:fine){footer.site .wordmark:hover{color:#d4ff3a;-webkit-text-stroke:1.5px #0b0b09}}
