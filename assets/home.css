@@ -672,3 +672,6 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
 }
 
 @media(min-width:901px){footer.site .fgrid>div:nth-child(1),footer.site .fgrid>div:nth-child(2){align-self:start;margin-bottom:0}footer.site>.wrap{align-items:end}}
+
+/* picker: its own section via a faint translucent cream wash */
+.doors{background:rgba(236,231,220,.045)!important;border-block:1px solid rgba(236,231,220,.1)}
