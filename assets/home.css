@@ -425,3 +425,46 @@ html.introing .hero::before{opacity:0}
 .sh-pscr{border-radius:2.7cqw!important}
 .sh-phone::after{top:calc(.9cqw + 1.4%)!important;width:31%!important;height:3.9%!important}
 .sh-phone::before{content:"";position:absolute;z-index:6;top:calc(.9cqw + 1.4% + 1.95%);left:calc(50% + 10.5%);width:.9cqw;height:.9cqw;margin:-.45cqw 0 0 -.45cqw;border-radius:50%;background:radial-gradient(circle,#2a3a52 0,#10161f 55%,#000 100%)}
+
+/* ===== statement: a bright paper scene that opens like an iris, words ink in as you scroll ===== */
+.say-paper{--ink:#0b0b09;background:#e8e5da!important;color:var(--ink);border:0!important;padding:0!important;position:relative;z-index:2;clip-path:circle(150% at 50% 50%)}
+.say-paper::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;background:radial-gradient(120% 80% at 80% 0%,rgba(212,255,58,.55),transparent 55%),radial-gradient(90% 70% at 0% 100%,rgba(11,11,9,.12),transparent 60%)}
+.say-stage{min-height:100vh;display:flex;align-items:center;position:relative}
+.say-paper .say-line{font:400 clamp(2.8rem,8.2vw,9rem)/.96 var(--serif)!important;letter-spacing:-.045em!important;max-width:15ch!important;margin:0!important;color:var(--ink);text-wrap:balance}
+.say-paper .say-line .w{transition:none!important}
+.say-paper .say-line em{font-style:italic;color:var(--ink)}
+.say-paper .say-line em .w{background:linear-gradient(var(--accent),var(--accent)) 0 86%/100% .3em no-repeat}
+.say-sig{position:absolute;left:28px;bottom:clamp(28px,6vh,56px);font:500 .74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:rgba(11,11,9,.55)}
+.say-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3.5vw,56px);padding-block:clamp(40px,7vw,96px) clamp(64px,9vw,120px);position:relative;border-top:1.5px solid var(--ink)}
+.say-rail .rl{position:relative;padding-top:clamp(70px,9vw,130px)}
+.say-rail .rl i{position:absolute;left:-.04em;top:-.12em;font:400 clamp(6rem,13vw,13rem)/1 var(--serif);font-style:normal;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.3px rgba(11,11,9,.55);pointer-events:none}
+.say-rail h3{position:relative;font:600 clamp(1.25rem,1.8vw,1.7rem)/1.15 var(--sans);letter-spacing:-.025em;margin:0 0 .5rem;color:var(--ink)}
+.say-rail span{position:relative;display:block;font-size:1.05rem;line-height:1.45;color:rgba(11,11,9,.72);max-width:30ch}
+@media(max-width:900px){.say-rail{grid-template-columns:1fr}.say-rail .rl{padding-top:90px}.say-stage{min-height:78vh}}
+
+.say-stage>.wrap{width:100%}
+.say-rail .rl{padding-top:clamp(110px,12vw,170px)}
+.say-rail .rl i{top:-.02em}
+@media(max-width:900px){.say-rail .rl{padding-top:120px}}
+
+/* the cut: a list of things you could be sold gets struck out, then the promise appears */
+.say-paper:not(.fx) .cut{display:none}
+.say-paper.fx .say-line{position:relative}
+.cut{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:calc(73px + 3vh) 28px 3vh;max-width:var(--max);margin:0 auto;left:0;right:0;transform-origin:50% 50%}
+.cut-k{font:500 .78rem var(--mono);letter-spacing:.16em;text-transform:uppercase;margin:0 0 1.1rem;color:rgba(11,11,9,.6)}
+.cut ul{list-style:none;margin:0;padding:0;display:grid;gap:clamp(.2rem,.6vh,.5rem)}
+.cut li{position:relative;width:max-content;max-width:100%;font:600 clamp(1.15rem,3.2vw,3.1rem)/1.12 var(--sans);letter-spacing:-.035em;color:var(--ink)}
+.cut li span{position:relative;z-index:1;transition:none}
+.cut li::after-off{content:"";position:absolute;left:-.4rem;right:-.4rem;top:50%;height:.62em;margin-top:-.28em;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;border-radius:2px;z-index:2;mix-blend-mode:normal;box-shadow:0 0 0 .06em var(--ink)}
+.cut-flash{position:absolute;inset:0;background:var(--accent);opacity:0;pointer-events:none;z-index:6}
+
+.cut li .bar{position:absolute;left:-.4rem;right:-.4rem;top:50%;height:.62em;margin-top:-.28em;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;border-radius:2px;z-index:2;box-shadow:0 0 0 .06em var(--ink)}
+.cut li.struck span{text-decoration:none}
+
+/* 3D: list sits in perspective, struck lines fall away into depth, the sentence flies in from far back */
+.say-stage{perspective:1000px;perspective-origin:50% 45%;overflow:hidden}
+.cut ul{transform-style:preserve-3d;transform:rotateY(-9deg) rotateX(4deg);transform-origin:0 50%}
+.cut li{transform-style:preserve-3d;will-change:transform,opacity}
+.say-paper .say-line{transform-style:preserve-3d}
+.say-paper .say-line .w{will-change:transform,opacity}
+.say-paper .say-line{perspective:900px}
