@@ -642,3 +642,9 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
 .hero h1 em{font-style:normal!important;letter-spacing:-.01em!important}
 @media(min-width:701px){.hero h1{font-size:clamp(3rem,min(8.6vw,16vh),8.6rem)!important}}
 @media(max-width:700px){.hero h1{font-size:clamp(3rem,15vw,4.8rem)!important}}
+
+/* hero headline in Frank Ruhl Libre */
+.hero h1{font-family:'Frank Ruhl Libre','Times New Roman',serif!important;letter-spacing:-.025em!important;line-height:1.02!important}
+.hero h1 em{letter-spacing:-.025em!important}
+@media(min-width:701px){.hero h1{font-size:clamp(3rem,min(6.6vw,12.5vh),6.8rem)!important}}
+@media(max-width:700px){.hero h1{font-size:clamp(2.6rem,12.5vw,4.4rem)!important}}
