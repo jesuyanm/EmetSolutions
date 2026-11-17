@@ -370,3 +370,20 @@ html.introing .hero::before{opacity:0}
 .sh-side .sh-chap em{font-family:var(--sans)!important}
 
 .sh-side h2 em{color:inherit!important}
+
+/* ===== back to the drawn dark mockup (original proportions): flat monitor + chin + trapezoid neck, phone 22% hanging off the right ===== */
+.show-stage{width:min(calc(100% / 1.17),calc((100vh - 150px) / .8))!important;justify-self:center;margin:0 auto!important}
+.sh-mon{position:relative}
+.sh-mon::before{content:"";position:absolute;top:.9cqw;left:50%;width:.5cqw;height:.5cqw;margin-left:-.25cqw;border-radius:50%;background:#3a3a33;z-index:3}
+.sh-screen{background:#1a1a16!important;border:solid #1a1a16!important;border-width:2.8cqw 2.6cqw 0!important;border-radius:14px 14px 0 0!important;box-shadow:0 0 0 1px var(--line-2)!important;aspect-ratio:16/10!important}
+.sh-screen::after,.sh-pscr::after,.ph-btn,.ph-cc{display:none!important}
+.im-chin{height:4.6cqw!important;background:#1a1a16!important;border-radius:0 0 14px 14px!important;box-shadow:0 0 0 1px var(--line-2),0 26px 50px rgba(0,0,0,.5)!important;border:0!important}
+.im-chin .sh-built{font-size:.8cqw!important;box-shadow:none!important;padding:.35em 1em!important}
+.im-neck{width:15cqw!important;height:8cqw!important;margin:0 auto!important;background:linear-gradient(#121210,#1f1f1b)!important;clip-path:polygon(14% 0,86% 0,100% 100%,0 100%)!important;border-radius:0!important;box-shadow:none!important}
+.im-base{width:30cqw!important;height:9px!important;margin:0 auto!important;background:#22221d!important;border:1px solid var(--line-2)!important;border-radius:8px 8px 3px 3px!important;box-shadow:0 16px 28px rgba(0,0,0,.6)!important}
+.sh-phone{width:25.6cqw!important;right:-16.3cqw!important;bottom:0!important;padding:5px!important;background:#1a1a16!important;border:1px solid var(--line-2)!important;border-radius:20px!important;box-shadow:0 30px 60px rgba(0,0,0,.65)!important}
+.sh-phone::after{display:block!important;content:"";position:absolute;top:calc(5px + 1.4%)!important;left:50%;transform:translateX(-50%);width:31%!important;height:3.9%!important;aspect-ratio:auto!important;background:#000!important;border-radius:99px!important;z-index:5}
+.sh-pscr{border:0!important;border-radius:15px!important;background:#0f0f0f}
+@media(max-width:760px){.sh-phone{width:30cqw!important;right:-12cqw!important}.show-stage{width:min(calc(100% / 1.14),100%)!important}}
+
+@media(min-width:1000px){.show>.wrap{max-width:1560px!important}}

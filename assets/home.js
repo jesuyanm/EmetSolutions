@@ -147,7 +147,7 @@
         function geo(){
           var sw=stage.offsetWidth,sh=stage.offsetHeight,top=off(stage,sec,'offsetTop'),
               cell=wrapEl.clientWidth-head.offsetWidth-(parseFloat(getComputedStyle(wrapEl).columnGap)||0),
-              k=Math.min(cell/(sw*1.07),(sec.offsetHeight-pad*2)/(sh*1.16));
+              k=Math.min(cell/(sw*1.17),(sec.offsetHeight-pad*2)/(sh*1.16));
           return {k:Math.max(1,k),y:pad-top,x:0}
         }
         g.set(stage,{transformOrigin:'50% 0'});
