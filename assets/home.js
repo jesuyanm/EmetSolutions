@@ -56,7 +56,7 @@
       for(var y=0;y<HC;y+=stp)for(var x=0;x<WC;x+=stp)if(d[(y*WC+x)*4+3]>140)ps.push([x-WC/2,-(y-HC/2+8),x>x0+wmain]);
       var M=ps.length,sc2=(mobile?1300:2300)/tw;
       var wp=new Float32Array(M*3),wt=new Float32Array(M*3),wv=new Float32Array(M*3),wc=new Float32Array(M*3),wz=new Float32Array(M);
-      var li=new T.Color('#ff8a3d'),pa=new T.Color('#ece7dc');
+      var li=new T.Color('#d4ff3a'),pa=new T.Color('#ece7dc');
       var ymin=1e9,ymax=-1e9,cc=new T.Color();for(var k0=0;k0<M;k0++){var yy=ps[k0][1];if(yy<ymin)ymin=yy;if(yy>ymax)ymax=yy}var yr=ymax-ymin;
       for(var i2=0;i2<M;i2++){var j=i2*3;wt[j]=ps[i2][0]*sc2;wt[j+1]=WY+ps[i2][1]*sc2;wt[j+2]=WZ+(Math.random()-.5)*60;
         var a1=Math.random()*6.283,rr2=600+Math.random()*1800;wp[j]=Math.cos(a1)*rr2;wp[j+1]=WY+Math.sin(a1)*rr2*.5;wp[j+2]=WZ-400-Math.random()*1600;
