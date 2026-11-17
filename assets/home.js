@@ -142,16 +142,16 @@
       g.fromTo(ph,{y:90,opacity:0},{y:0,opacity:1,ease:'power2.out',scrollTrigger:{trigger:stage,start:'top 60%',end:'top 25%',scrub:.4}});
       /* as you scroll the section up, the mockup grows toward the right and the text slides aside */
       if(matchMedia('(min-width:1000px)').matches){
-        var sec=document.getElementById('show'),wrapEl=sec.querySelector('.wrap'),head=sec.querySelector('.show-head'),tabs=sec.querySelector('.sh-chap'),pad=22;
+        var sec=document.getElementById('show'),wrapEl=sec.querySelector('.wrap'),head=sec.querySelector('.sh-fig'),tabs=sec.querySelector('.sh-chap'),pad=22;
         function off(el,root,prop){var v=0;while(el&&el!==root){v+=el[prop];el=el.offsetParent}return v}
         function geo(){
           var sw=stage.offsetWidth,sh=stage.offsetHeight,top=off(stage,sec,'offsetTop'),left=off(stage,sec,'offsetLeft'),
-              k=Math.min(wrapEl.clientWidth/sw,(sec.offsetHeight-pad*2)/(sh*1.08)),
+              cxv=stage.getBoundingClientRect().left+sw*(+g.getProperty(stage,'scale')||1)/2,k=Math.min(wrapEl.clientWidth/sw,(sec.offsetHeight-pad*2)/(sh*1.16),(innerWidth-cxv-24)/(sw*.64)),
               wr=wrapEl.offsetLeft+wrapEl.clientWidth-28,cx=left+sw/2;
           return {k:k,y:pad-top,x:Math.max(0,wr-(cx+sw*k/2))*.5}
         }
         g.set(stage,{transformOrigin:'50% 0'});
-        var tl=g.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:sec,start:'top 88%',end:'top 16%',scrub:.7,invalidateOnRefresh:true}});
+        var tl=g.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:sec,start:'top 52%',end:'top 9%',scrub:.7,invalidateOnRefresh:true}});
         tl.to(stage,{scale:function(){return geo().k},y:function(){return geo().y},x:0,duration:.7},.3)
           .to([head,tabs],{x:-70,opacity:0,stagger:.03,duration:.28},0);
       }

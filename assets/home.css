@@ -238,3 +238,30 @@ html.introing .hero::before{opacity:0}
 /* label on the laptop bar: this is our work */
 .sh-bar .sh-built{margin-left:auto;font:600 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent);padding:5px 11px;border-radius:99px;white-space:nowrap}
 @media(max-width:560px){.sh-bar span{display:none}}
+
+/* degner: big-word chapter labels above, mockup, figure caption below */
+.show-head{display:none!important}
+.sh-chap{grid-template-columns:repeat(3,1fr)!important;margin:0 0 clamp(14px,2.2vh,24px)!important;border-top:0!important;padding-top:0}
+.sh-chap button{display:flex!important;flex-wrap:wrap;align-items:baseline;gap:0 .6rem;padding:10px 12px 8px 0!important;color:var(--muted);opacity:.5;transition:opacity .35s,color .35s}
+.sh-chap button:hover,.sh-chap button.on{opacity:1;color:var(--paper)}
+.sh-chap span{font:500 .7rem var(--mono);letter-spacing:.14em;padding:0;align-self:center;flex:none;width:1.6rem}
+.sh-chap b{font:400 clamp(1.8rem,3vw,2.8rem)/1 var(--serif);letter-spacing:-.03em}
+.sh-chap em{font-style:normal;font-size:clamp(.85rem,1.05vw,1rem);color:inherit;max-height:none;opacity:1;overflow:visible;margin:0;grid-column:auto}
+.sh-chap button.on span{color:var(--accent)}
+.sh-ind{top:auto!important;bottom:0;height:2px}
+.sh-fig{display:flex;align-items:baseline;justify-content:center;gap:clamp(10px,1.6vw,22px);flex-wrap:wrap;margin:clamp(22px,4vh,40px) 0 0;font:500 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.sh-fig b{color:var(--accent);font-weight:600}
+.sh-fig a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px}
+.sh-fig a:hover{color:var(--accent)}
+@media(max-width:999px){.sh-chap{grid-template-columns:1fr!important}.sh-chap button{opacity:.6!important}.sh-chap button.on{opacity:1!important}.sh-fig{justify-content:flex-start;margin-top:2rem}}
+
+.sh-phone::after{top:2.7%!important}
+
+/* phone matches the original mockup: slim, low, hanging off the laptop's bottom-right corner */
+.sh-phone{width:22%!important;right:-13%!important;bottom:-14%!important;padding:3px!important;border:1px solid #3a3a33!important;background:#101010!important;border-radius:clamp(14px,1.7vw,22px)!important}
+.sh-pscr{border-radius:clamp(11px,1.4vw,18px)!important}
+.sh-phone::after{top:3.4%!important;width:29%!important;aspect-ratio:125/37;height:auto!important}
+.show{padding-bottom:clamp(70px,11vh,110px)!important}
+@media(max-width:760px){.sh-phone{width:28%!important;right:-4%!important;bottom:-10%!important}}
+
+.sh-bar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
