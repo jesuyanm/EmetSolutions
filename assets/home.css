@@ -231,3 +231,6 @@ html.introing .hero::before{opacity:0}
 
 /* island sized like a real iPhone 14 Pro (125 x 37 on a 390 wide screen) */
 .sh-phone::after{top:1.6%!important;width:32%!important;height:auto!important;aspect-ratio:125/37}
+/* phone scale: bigger, closer to a real phone next to a laptop */
+.sh-phone{width:24%!important;right:-3%!important;bottom:-5%!important}
+@media(max-width:760px){.sh-phone{width:30%!important}}

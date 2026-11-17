@@ -152,8 +152,8 @@
         }
         g.set(stage,{transformOrigin:'50% 0'});
         var tl=g.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:sec,start:'top 88%',end:'top 16%',scrub:.7,invalidateOnRefresh:true}});
-        tl.to(stage,{scale:function(){return geo().k},y:function(){return geo().y},x:function(){return geo().x}},0)
-          .to([head,tabs],{x:-40,opacity:.18,stagger:.04},0);
+        tl.to(stage,{scale:function(){return geo().k},y:function(){return geo().y},x:0,duration:.7},.3)
+          .to([head,tabs],{x:-70,opacity:0,stagger:.03,duration:.28},0);
       }
     }
   }
