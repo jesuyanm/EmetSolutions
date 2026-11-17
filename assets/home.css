@@ -675,3 +675,6 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
   .cut li .bar{display:none}
   .cut li span{text-decoration:line-through;text-decoration-thickness:1px}
 }
+
+/* statement ends with the sentence now that the three-column row is gone */
+.say-paper .say-stage{padding-bottom:clamp(40px,6vw,88px)}

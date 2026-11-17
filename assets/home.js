@@ -208,7 +208,6 @@
       var tl=g.timeline({scrollTrigger:{trigger:say.querySelector('.cut'),start:'top 65%',once:true}});
       lis.forEach(function(li,i){tl.fromTo(li.querySelector('.bar'),{scaleX:0},{scaleX:1,duration:.5,ease:'power2.out'},i*.22);tl.to(li.querySelector('span'),{opacity:.4,duration:.3},i*.22+.3)});
       g.to(line,{opacity:1,y:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:line,start:'top 80%',once:true}});
-      g.from(say.querySelectorAll('.rl'),{y:20,opacity:0,duration:.7,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:'.say-rail',start:'top 85%',once:true}});
     }else lis.forEach(function(li){li.querySelector('span').style.opacity=.4;li.querySelector('.bar').style.transform='none'});
   }
   /* no scrolling while the intro plays */

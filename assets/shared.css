@@ -73,3 +73,12 @@ h1 em,h2 em{font-style:normal}
 /* hero drawings: svg internals */
 @media(max-width:960px){.art{display:none}}@media(prefers-reduced-motion:reduce){.art-path .route{stroke-dashoffset:0}.art-path .nd{fill:var(--accent)}.art-path .lb{opacity:1}.art-path .trav,.art-path .rg{display:none}}@media(max-width:960px){.art-radar,.art-sig{display:none}}@media(prefers-reduced-motion:reduce){.art-radar *,.art-sig *{animation:none!important}.art-sig .tag.t2{opacity:1}}
 .art svg text{stroke:none}
+
+/* about: who we work with */
+.a-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px);align-items:start}
+.a-who-l h2{font-size:clamp(2rem,3.6vw,3rem);margin:.3em 0 0;max-width:16ch}
+.a-who{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-2)}
+.a-who li{display:grid;grid-template-columns:3rem 1fr;align-items:baseline;padding:1.05rem 0;border-bottom:1px solid var(--line-2);font:400 clamp(1.3rem,2.2vw,1.8rem)/1.15 var(--serif)}
+.a-who li span{font:600 .75rem var(--mono);letter-spacing:.1em;color:var(--accent)}
+.a-next-p{max-width:40ch;color:var(--soft);margin:.6rem 0 1.4rem}
+@media(max-width:860px){.a-top{grid-template-columns:1fr}}
