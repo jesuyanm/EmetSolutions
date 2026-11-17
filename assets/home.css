@@ -572,3 +572,13 @@ html{-webkit-tap-highlight-color:transparent}
 .hero h1{font-size:clamp(3rem,min(8.2vw,14vh),7.4rem)!important;line-height:1!important;letter-spacing:-.018em!important;font-kerning:normal;text-rendering:optimizeLegibility;margin-bottom:.32em!important}
 .hero h1 em{letter-spacing:-.01em}
 @media(max-width:700px){.hero h1{font-size:clamp(2.8rem,13.5vw,4.6rem)!important}}
+
+/* hero headline in the site sans, upright */
+.hero h1{font-family:var(--sans)!important;font-weight:600!important;font-size:clamp(2.7rem,min(7vw,12vh),6.2rem)!important;line-height:1.02!important;letter-spacing:-.04em!important}
+.hero h1 em{font-style:normal!important;letter-spacing:-.04em}
+@media(max-width:700px){.hero h1{font-size:clamp(2.5rem,12vw,4rem)!important}}
+
+/* hero headline: Bricolage Grotesque, a sans with character */
+.hero h1{font-family:'Bricolage Grotesque',var(--sans)!important;font-weight:700!important;font-size:clamp(2.8rem,min(8vw,13.5vh),7rem)!important;line-height:.98!important;letter-spacing:-.045em!important}
+.hero h1 em{letter-spacing:-.045em}
+@media(max-width:700px){.hero h1{font-size:clamp(2.6rem,13vw,4.4rem)!important}}
