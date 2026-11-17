@@ -57,3 +57,12 @@ footer.site .fgrid li{margin-bottom:.4em}
 h1 em,h2 em{font-style:normal}
 .page-hero h1{font-size:clamp(3rem,7.4vw,6.4rem);line-height:.98;letter-spacing:-.02em}
 .a-step{padding-inline:0!important}.a-step .a-t{padding:0}
+
+/* contact: side column with numbered steps */
+.c-side .c-mail{margin:.4rem 0 0;font:400 clamp(1.5rem,2.6vw,2.2rem)/1.1 var(--serif)}
+.c-side .c-mail a{color:var(--paper);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:.2em;text-decoration-thickness:2px}
+.c-steps{list-style:none;margin:.8rem 0 0;padding:0;border-top:1px solid var(--line-2)}
+.c-steps li{display:grid;grid-template-columns:2.6rem 1fr;padding:1.1rem 0;border-bottom:1px solid var(--line-2)}
+.c-steps span{font:600 .75rem var(--mono);letter-spacing:.1em;color:var(--accent);padding-top:.25rem}
+.c-steps b{display:block;color:var(--paper);font:600 1.05rem/1.25 var(--sans)}
+.c-steps em{display:block;font-style:normal;color:var(--muted);margin-top:.2rem}

@@ -54,7 +54,7 @@
       cx.fillText('yanmiAde.',x0,215);
       var d=cx.getImageData(0,0,WC,HC).data,ps=[],stp=mobile?6:4;
       for(var y=0;y<HC;y+=stp)for(var x=0;x<WC;x+=stp)if(d[(y*WC+x)*4+3]>140)ps.push([x-WC/2,-(y-HC/2+8),x>x0+wmain]);
-      var M=ps.length,sc2=(mobile?1300:2300)/tw;
+      var M=ps.length,visW=2*(CZ0-WZ)*Math.tan(27.5*Math.PI/180)*(innerWidth/Math.max(innerHeight,1)),sc2=Math.min(mobile?1300:2300,visW*.8)/tw;
       var wp=new Float32Array(M*3),wt=new Float32Array(M*3),wv=new Float32Array(M*3),wc=new Float32Array(M*3),wz=new Float32Array(M);
       var li=new T.Color('#d4ff3a'),pa=new T.Color('#ece7dc');
       var cc;
