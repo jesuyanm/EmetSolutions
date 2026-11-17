@@ -609,7 +609,6 @@ header.site.scrolled{background:rgba(11,11,9,.78)!important;-webkit-backdrop-fil
 
 /* dark olive tone: picker on its own tone; contact band dark with a step row; cream footer */
 :root{--accent:#d4ff3a;--accent-ink:#0b0b09;--warm:#12140c}
-.doors{background:rgba(18,20,12,.88);border-block:1px solid var(--line)}
 .band,.band.tight{background:var(--warm)!important;color:var(--paper)!important}
 .band h2,.band-l h2{color:var(--paper)!important}
 .band p,.band-l p{color:var(--soft)!important}
@@ -632,3 +631,8 @@ header.site.scrolled{background:rgba(11,11,9,.78)!important;-webkit-backdrop-fil
 @media(max-width:900px){.band-l{grid-template-columns:1fr}.band-l h2{grid-row:auto}.band-l p:not(.band-mail),.band-l .btn,.band-l .band-mail{grid-column:1;margin-top:1rem}.band-steps{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.band-steps{grid-template-columns:1fr}}
 footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft:#3f3a30;--muted:#5d584c;--line:rgba(11,11,9,.16);--line-2:rgba(11,11,9,.3);color:#0b0b09}
+
+/* statement without lime: neutral paper, ink chips, ink underline */
+.say-paper::before{background:radial-gradient(90% 70% at 0% 100%,rgba(11,11,9,.12),transparent 60%)}
+.say-rail .rl::before{background:var(--ink);color:#ece7dc}
+.say-paper .say-line em .w{background:none;text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.12em}
