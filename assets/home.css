@@ -567,3 +567,8 @@ html{-webkit-tap-highlight-color:transparent}
 .say-rail span{font-size:.95rem}
 .band-l h2{font-size:clamp(2.3rem,min(4.4vw,8vh),3.8rem)!important;max-width:11ch!important}
 .band-steps b{font-size:1.05rem}.band-steps em{font-size:.93rem}
+
+/* hero headline: looser tracking so letters stop touching, a size down */
+.hero h1{font-size:clamp(3rem,min(8.2vw,14vh),7.4rem)!important;line-height:1!important;letter-spacing:-.018em!important;font-kerning:normal;text-rendering:optimizeLegibility;margin-bottom:.32em!important}
+.hero h1 em{letter-spacing:-.01em}
+@media(max-width:700px){.hero h1{font-size:clamp(2.8rem,13.5vw,4.6rem)!important}}
