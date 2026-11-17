@@ -55,29 +55,27 @@
 <section><div class="wrap grid g2">
   <form class="contact" id="contact-form" novalidate>
     <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+    <input type="hidden" name="from_name" value="">
     <input type="hidden" name="subject" value="New enquiry from yanmife website">
     <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="row2">
       <label>Name<input name="name" required autocomplete="name"></label>
       <label>Email<input type="email" name="email" required autocomplete="email"></label>
     </div>
-    <div class="row2">
-      <label>Company<input name="company" autocomplete="organization"></label>
-      <label>Interested in
-        <select name="service">
-          <option>Websites</option>
-          <option>Online store</option>
-          <option>Brand &amp; logo design</option>
-          <option>Get found (SEO, content, social media)</option>
-          <option>Tools &amp; automation</option>
-          <option>Data &amp; analytics</option>
-          <option>Care plans (hosting, maintenance)</option>
-          <option>Not sure yet</option>
-        </select>
-      </label>
-    </div>
-    <label>Message<textarea name="message" required></textarea></label>
-    <button class="btn" type="submit">Send message</button>
+    <label>What do you need?
+      <select name="service">
+        <option>Websites</option>
+        <option>Online store</option>
+        <option>Brand &amp; logo design</option>
+        <option>Get found (SEO, content, social media)</option>
+        <option>Tools &amp; automation</option>
+        <option>Data &amp; analytics</option>
+        <option>Care plans (hosting, maintenance)</option>
+        <option selected>Not sure yet</option>
+      </select>
+    </label>
+    <label>Tell me a bit about it<textarea name="message" required placeholder="Your business, what is not working, and any deadline"></textarea></label>
+    <button class="btn" type="submit">Send</button>
     <p id="form-status" role="status"></p>
   </form>
   <aside>

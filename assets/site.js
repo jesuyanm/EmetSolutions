@@ -28,6 +28,12 @@ if ('IntersectionObserver' in window) {
 const form = document.getElementById('contact-form');
 if (form) {
   const status = document.getElementById('form-status');
+  const want = new URLSearchParams(location.search).get('service');
+  if (want && form.service) {
+    const o = [...form.service.options].find((x) => x.textContent.toLowerCase().startsWith(want.toLowerCase()));
+    if (o) form.service.value = o.value || o.textContent;
+  }
+  const btn = form.querySelector('button[type=submit]');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (form.website && form.website.value) return; // honeypot
@@ -37,7 +43,10 @@ if (form) {
       status.textContent = 'The form is not connected yet. Please email us directly.';
       return;
     }
-    status.textContent = 'Sending…';
+    status.textContent = 'Sending…'; btn.disabled = true;
+    const d = new Date(), ref = 'YA-' + d.toISOString().slice(2, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+    form.subject.value = '[' + ref + '] ' + form.service.value + ' – ' + form.name.value;
+    form.from_name.value = form.name.value;
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -47,11 +56,13 @@ if (form) {
       const data = await res.json();
       if (data.success) {
         form.reset();
-        status.textContent = 'Thanks. We will reply within two business days.';
+        status.textContent = 'Thanks. Your reference is ' + ref + '. I will reply within two business days.';
       } else {
+        btn.disabled = false;
         status.textContent = 'Something went wrong. Please email us directly.';
       }
     } catch {
+      btn.disabled = false;
       status.textContent = 'Network error. Please email us directly.';
     }
   });
