@@ -594,3 +594,17 @@ html{-webkit-tap-highlight-color:transparent}
 header.site{transition:opacity .9s ease,background-color .3s var(--ease),border-color .3s var(--ease)}
 header.site.scrolled{background:rgba(11,11,9,.78)!important;-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border-bottom-color:rgba(236,231,220,.22)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){header.site.scrolled{background:#0b0b09!important}}
+
+/* nav: calmer, sans links in sentence case, slimmer bar */
+@media(min-width:901px){
+  .nav{height:64px}
+  nav.menu{gap:2px}
+  nav.menu a{font:500 .95rem/1 var(--sans);letter-spacing:-.005em;text-transform:none;padding:10px 14px;color:var(--soft);border-radius:8px;transition:color .2s var(--ease),background-color .2s var(--ease)}
+  nav.menu a::after{display:none}
+  nav.menu a:hover{color:var(--paper);background:rgba(236,231,220,.08)}
+  nav.menu a[aria-current="page"]{color:var(--paper)}
+  nav.menu a[aria-current="page"]::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:.12em}
+  nav.menu a.cta{margin-left:16px;padding:11px 18px;border-radius:8px;font:600 .9rem/1 var(--sans);letter-spacing:-.005em;background:var(--accent);color:var(--accent-ink)}
+  nav.menu a.cta:hover{background:var(--paper);color:var(--accent-ink)}
+  nav.menu a.cta:active{transform:scale(.97)}
+}
