@@ -661,3 +661,14 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
   footer.site .fgrid h4{margin-bottom:.9em}
   footer.site .wordmark{line-height:.8;margin-bottom:-.05em}
 }
+
+/* footer on the same 4-column grid as the contact steps above */
+@media(min-width:901px){
+  footer.site>.wrap{grid-template-columns:repeat(4,1fr);grid-template-areas:"mark mark co ct" "copy copy copy copy";column-gap:clamp(16px,2.4vw,36px)}
+  footer.site .fgrid{display:contents}
+  footer.site .fgrid>div:nth-child(1){grid-area:co;align-self:end;margin-bottom:.9rem}
+  footer.site .fgrid>div:nth-child(2){grid-area:ct;align-self:end;margin-bottom:.9rem}
+  footer.site .wordmark{margin-left:.04em}
+}
+
+@media(min-width:901px){footer.site .fgrid>div:nth-child(1),footer.site .fgrid>div:nth-child(2){align-self:start;margin-bottom:0}footer.site>.wrap{align-items:end}}
