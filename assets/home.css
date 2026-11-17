@@ -288,3 +288,40 @@ html.introing .hero::before{opacity:0}
 
 .sh-phone{border-radius:15% / 7.2%!important}
 .sh-pscr{border-radius:13% / 6.2%!important}
+
+/* ===== iMac 24" look (as on apple.com/ca/imac): flat silver face, thin black screen edge, deep chin, slab stand ===== */
+.sh-screen{border:clamp(9px,1.7vw,24px) solid #e9e8e4!important;border-radius:clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px) 0 0!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25),0 0 0 1px #c9c8c3,0 50px 90px -20px rgba(0,0,0,.8)!important;background:#000!important}
+.sh-screen::after{background:linear-gradient(115deg,rgba(255,255,255,.06),rgba(255,255,255,0) 35%)!important;box-shadow:inset 0 0 0 clamp(2px,.42vw,6px) #000!important;border-radius:2px!important}
+.im-chin{height:clamp(44px,7.2vw,92px)!important;background:linear-gradient(180deg,#e9e8e4 0%,#dddcd7 100%)!important;border-radius:0 0 clamp(12px,1.6vw,22px) clamp(12px,1.6vw,22px)!important;box-shadow:inset 0 -1px 0 #c3c2bd,0 0 0 1px #c9c8c3,0 30px 50px -20px rgba(0,0,0,.7)!important}
+.im-neck{width:clamp(56px,9%,110px)!important;height:clamp(54px,8.6vw,104px)!important;margin-top:0!important;clip-path:none!important;background:linear-gradient(90deg,#b9b8b3 0%,#e4e3df 18%,#efeeea 50%,#e0dfdb 82%,#b0afaa 100%)!important;border-radius:0 0 3px 3px;box-shadow:0 1px 0 #a9a8a3}
+.im-base{width:clamp(120px,30%,300px)!important;height:clamp(8px,1.2vw,15px)!important;margin-top:-1px!important;background:linear-gradient(180deg,#efeeea 0%,#d3d2cd 100%)!important;border-radius:8px 8px 14px 14px/3px 3px 8px 8px!important;box-shadow:0 18px 30px -6px rgba(0,0,0,.75)!important}
+
+/* iPhone Pro look: flat brushed frame, thin even black bezel, island, camera control */
+.show-stage{width:min(100%,calc((100vh - 470px)*1.5))!important}
+.sh-phone{background:linear-gradient(160deg,#b9b7b0 0%,#6e6c66 22%,#a8a69f 48%,#5d5b56 74%,#aaa8a1 100%)!important;padding:2.5px!important;border-radius:14% / 6.8%!important;box-shadow:0 0 0 1px #0d0d0c,inset 0 0 0 1px rgba(255,255,255,.35),0 34px 64px rgba(0,0,0,.72)!important}
+.sh-pscr{border-width:clamp(2px,.3vw,4px)!important;border-radius:12% / 5.9%!important}
+.ph-btn.r{top:33%!important;height:13%!important}
+.ph-cc{position:absolute;right:-3px;bottom:22%;width:3px;height:6%;border-radius:2px;background:linear-gradient(90deg,#8a8880,#55534d)}
+
+/* proportions scale with the mockup itself (container units) so it looks identical at any size */
+.show-stage{container-type:inline-size;width:min(100%,calc((100vh - 200px)*1.12))!important}
+.sh-screen{border-width:2.3cqw!important;border-radius:1.9cqw 1.9cqw 0 0!important;aspect-ratio:16/10!important}
+.sh-screen::after{box-shadow:inset 0 0 0 .5cqw #000!important}
+.im-chin{height:7.6cqw!important;border-radius:0 0 1.9cqw 1.9cqw!important}
+.im-chin .sh-built{font-size:1.05cqw!important}
+.im-neck{width:9cqw!important;height:11cqw!important}
+.im-base{width:27cqw!important;height:1.5cqw!important}
+.sh-phone{width:19cqw!important;right:-5cqw!important;bottom:9cqw!important}
+@media(max-width:760px){.sh-phone{width:27cqw!important;right:-3cqw!important;bottom:7cqw!important}.im-chin .sh-built{font-size:1.7cqw!important}}
+
+/* iPhone 18 Pro reference: hairline metal frame, very thin even bezel, deep corners, wide island */
+.sh-phone{padding:.35cqw!important;border-radius:3.4cqw!important;background:linear-gradient(155deg,#c9c7c1 0%,#7a7872 25%,#b9b7b0 50%,#6a6862 75%,#bdbbb4 100%)!important;box-shadow:0 0 0 1px #0b0b0a,inset 0 0 0 1px rgba(255,255,255,.4),0 3cqw 6cqw rgba(0,0,0,.7)!important}
+.sh-pscr{border:.8cqw solid #000!important;border-radius:3.05cqw!important}
+.sh-phone::after{top:calc(.35cqw + .8cqw + 1.15cqw)!important;width:6cqw!important;aspect-ratio:auto!important;height:1.75cqw!important;border-radius:2cqw!important}
+.ph-btn{width:.3cqw!important}
+@media(max-width:760px){.sh-phone::after{width:8.4cqw!important;height:2.4cqw!important}.sh-phone{border-radius:4.6cqw!important}.sh-pscr{border-radius:4.1cqw!important;border-width:1cqw!important}}
+
+/* dark graphite phone, like the dark 18 Pro in the reference */
+.sh-phone{background:linear-gradient(155deg,#4a4a4d 0%,#1d1d1f 28%,#3a3a3d 52%,#161617 78%,#454548 100%)!important;box-shadow:0 0 0 1px #000,inset 0 0 0 1px rgba(255,255,255,.14),0 3cqw 6cqw rgba(0,0,0,.75)!important}
+.ph-btn.l,.ph-btn.r,.ph-cc{background:linear-gradient(90deg,#3a3a3d,#1c1c1e)!important}
+.ph-btn.l{background:linear-gradient(180deg,#3a3a3d 0 18%,transparent 18% 26%,#3a3a3d 26% 58%,transparent 58% 66%,#3a3a3d 66% 100%)!important}
