@@ -234,3 +234,7 @@ html.introing .hero::before{opacity:0}
 /* phone scale: bigger, closer to a real phone next to a laptop */
 .sh-phone{width:24%!important;right:-3%!important;bottom:-5%!important}
 @media(max-width:760px){.sh-phone{width:30%!important}}
+
+/* label on the laptop bar: this is our work */
+.sh-bar .sh-built{margin-left:auto;font:600 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent);padding:5px 11px;border-radius:99px;white-space:nowrap}
+@media(max-width:560px){.sh-bar span{display:none}}
