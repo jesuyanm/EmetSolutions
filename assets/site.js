@@ -56,7 +56,7 @@ if (form) {
       const data = await res.json();
       if (data.success) {
         form.reset();
-        status.textContent = 'Thanks. Your reference is ' + ref + '. I will reply within two business days.';
+        status.textContent = 'Thanks. Your reference is ' + ref + '. We will reply within two business days.';
       } else {
         btn.disabled = false;
         status.textContent = 'Something went wrong. Please email us directly.';
