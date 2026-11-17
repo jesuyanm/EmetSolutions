@@ -196,10 +196,10 @@
     say.classList.add('fx');flash.className='cut-flash';stg.appendChild(flash);
     g.set(ws,{opacity:0,z:-900,rotationY:55,transformOrigin:'50% 50%'});
     g.fromTo(say,{clipPath:'circle(0% at 50% 62%)'},{clipPath:'circle(150% at 50% 62%)',ease:'none',scrollTrigger:{trigger:say,start:'top 96%',end:'top 8%',scrub:.5}});
-    var tl=g.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:stg,start:'top top',end:'+=420%',pin:true,scrub:.6}});
+    var tl=g.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:stg,start:'top top',end:'+=250%',pin:true,scrub:.6}});
     tl.from(cut,{opacity:0,y:40,duration:.6},0);
     lis.forEach(function(li,i){
-      var at=.8+i*.85;
+      var at=.7+i*.8;
       tl.to(li,{'--s':1,duration:.01},at);
       tl.fromTo(li,{x:0},{x:0,duration:.01},at);
       tl.to(li,{z:-1400,rotationX:42,rotationZ:i%2?-4:4,opacity:0,duration:.7,ease:'power3.in'},at+.55);
@@ -209,11 +209,11 @@
     g.set(lis,{});
     /* sweep each strike bar with the timeline using inline transforms on the pseudo via a child element */
     lis.forEach(function(li,i){var bar=document.createElement('b');bar.className='bar';li.appendChild(bar);
-      var at=.8+i*.85;
+      var at=.7+i*.8;
       tl.fromTo(bar,{scaleX:0},{scaleX:1,duration:.45,ease:'expo.out'},at);
       tl.to(li.querySelector('span'),{opacity:.38,duration:.3,ease:'power2.out'},at+.3);
     });
-    var end=.8+lis.length*.85+.9;
+    var end=.7+lis.length*.8+.7;
     
     tl.to(cut,{opacity:0,duration:.01},end+.12);
     

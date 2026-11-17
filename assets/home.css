@@ -479,3 +479,19 @@ html.introing .hero::before{opacity:0}
 /* restrained strike: a thin ink rule, no loud bar */
 .cut li .bar{height:.075em!important;margin-top:-.03em!important;background:var(--ink)!important;left:-.15rem!important;right:-.15rem!important;border-radius:0!important;box-shadow:none!important}
 .cut li{letter-spacing:-.04em}
+
+.say-stage{min-height:88vh!important}
+.say-rail{padding-block:clamp(24px,3.5vw,44px) clamp(40px,5vw,64px)!important}
+.say-rail .rl{padding-top:1rem!important}
+.say-rail span{font-size:1rem}
+
+/* hero: one confident line, centred over the field; Degner proof sits directly below so the strip goes */
+.hero{min-height:calc(100vh - 73px);display:flex;align-items:center;text-align:center}
+.hero .hero-grid>*{max-width:none!important;margin-inline:auto}
+.hero .eyebrow,.hero .hero-proof{display:none!important}
+.hero h1{font-size:clamp(3.4rem,10.5vw,10.5rem)!important;line-height:.9!important;letter-spacing:-.05em!important;margin:0 auto .28em!important;max-width:12ch}
+.hero h1 em{display:block}
+.hero .lead{font-size:clamp(1.05rem,1.6vw,1.4rem)!important;margin:0 auto 1.8rem!important;max-width:34ch;color:var(--soft)}
+.hero .btn-row{justify-content:center}
+.hero::before{background:radial-gradient(ellipse 60% 55% at 50% 48%,rgba(11,11,9,.78),rgba(11,11,9,.25) 70%,transparent),linear-gradient(0deg,var(--bg) 0%,rgba(11,11,9,0) 22%)!important}
+@media(max-width:700px){.hero{min-height:calc(100svh - 64px)}.hero h1{font-size:clamp(3rem,15vw,5rem)!important}}
