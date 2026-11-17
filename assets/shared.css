@@ -1,0 +1,41 @@
+/* Shared layer for the inner pages: matches the home page (header blur, numbered offers, dark contact band, cream footer) */
+:root{--ease:cubic-bezier(.23,1,.32,1);--warm:#12140c}
+html{-webkit-tap-highlight-color:transparent}
+
+/* header: dark glass once scrolled */
+header.site{transition:background-color .3s var(--ease),border-color .3s var(--ease)}
+header.site.scrolled{background:rgba(11,11,9,.78)!important;-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border-bottom-color:rgba(236,231,220,.22)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){header.site.scrolled{background:#0b0b09!important}}
+
+/* press feedback */
+.btn{transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .16s var(--ease)}
+.btn:active{transform:translate(0,0) scale(.97);box-shadow:none}
+.btn,.cta{touch-action:manipulation}
+
+/* services: numbered offers */
+.wrap{counter-reset:offer}
+.offer{counter-increment:offer}
+.offer::before{content:counter(offer,decimal-leading-zero);font:500 .8rem var(--mono);letter-spacing:.1em;color:var(--accent);padding-top:1.1em}
+.offer .checks li{opacity:1}
+
+/* contact band: dark, same as home */
+.band,.band.tight{background:var(--warm)!important;color:var(--paper)!important}
+.band h2{color:var(--paper)!important}
+.band p{color:var(--soft)!important}
+.band .btn{background:var(--accent)!important;color:var(--accent-ink)!important;border-color:var(--accent)!important}
+.band .btn:hover{background:var(--paper)!important;border-color:var(--paper)!important;box-shadow:6px 6px 0 var(--accent)!important}
+.band a:not(.btn){color:var(--paper)}
+
+/* footer: cream, wordmark left, links on the 4-column grid */
+footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft:#3f3a30;--muted:#5d584c;--line:rgba(11,11,9,.16);--line-2:rgba(11,11,9,.3);color:#0b0b09;padding-block:56px 24px}
+footer.site .fgrid li{margin-bottom:.4em}
+@media(min-width:901px){
+  footer.site>.wrap{display:grid;grid-template-columns:repeat(4,1fr);grid-template-areas:"mark mark co ct" "copy copy copy copy";column-gap:clamp(16px,2.4vw,36px);align-items:end}
+  footer.site .wordmark{grid-area:mark;margin:0 0 -.05em .04em;line-height:.8}
+  footer.site .fgrid{display:contents}
+  footer.site .fgrid>div:nth-child(1){grid-area:co;align-self:start}
+  footer.site .fgrid>div:nth-child(2){grid-area:ct;align-self:start}
+  footer.site .copy{grid-area:copy}
+}
+@media(min-width:861px){.offer{grid-template-columns:56px 1fr 1.3fr}}
+@media(max-width:860px){.offer::before{padding-top:0}}
