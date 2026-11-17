@@ -2,3 +2,6 @@
 _t.html
 _preview/
 _about-*.html
+
+node_modules/
+.impeccable/
