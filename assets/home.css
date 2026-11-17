@@ -468,3 +468,14 @@ html.introing .hero::before{opacity:0}
 .say-paper .say-line{transform-style:preserve-3d}
 .say-paper .say-line .w{will-change:transform,opacity}
 .say-paper .say-line{perspective:900px}
+
+/* calmer, less template-y */
+.say-rail .rl{padding-top:1.4rem!important;border-top:1px solid rgba(11,11,9,.35)}
+.say-rail{border-top:0!important;gap:clamp(24px,4vw,64px)!important}
+.say-rail h3{font:600 clamp(1.15rem,1.5vw,1.4rem)/1.2 var(--sans)}
+.cut li .bar{box-shadow:none!important;height:.5em;margin-top:-.2em}
+.cut li{font-weight:500!important}
+
+/* restrained strike: a thin ink rule, no loud bar */
+.cut li .bar{height:.075em!important;margin-top:-.03em!important;background:var(--ink)!important;left:-.15rem!important;right:-.15rem!important;border-radius:0!important;box-shadow:none!important}
+.cut li{letter-spacing:-.04em}

@@ -202,7 +202,7 @@
       var at=.8+i*.85;
       tl.to(li,{'--s':1,duration:.01},at);
       tl.fromTo(li,{x:0},{x:0,duration:.01},at);
-      tl.to(li,{z:-1400,rotationX:42,rotationZ:i%2?-4:4,opacity:0,duration:.7,ease:'power2.in'},at+.5);
+      tl.to(li,{z:-1400,rotationX:42,rotationZ:i%2?-4:4,opacity:0,duration:.7,ease:'power3.in'},at+.55);
       tl.fromTo(li,{scaleX:1},{scaleX:1,duration:.01},at);
       tl.set(li,{className:'+=struck'},at+.3);
     });
@@ -210,14 +210,14 @@
     /* sweep each strike bar with the timeline using inline transforms on the pseudo via a child element */
     lis.forEach(function(li,i){var bar=document.createElement('b');bar.className='bar';li.appendChild(bar);
       var at=.8+i*.85;
-      tl.fromTo(bar,{scaleX:0},{scaleX:1,duration:.5,ease:'power2.out'},at);
-      tl.fromTo(stg,{x:0},{x:i%2?-7:7,duration:.06,yoyo:true,repeat:1},at+.42);
+      tl.fromTo(bar,{scaleX:0},{scaleX:1,duration:.45,ease:'expo.out'},at);
+      tl.to(li.querySelector('span'),{opacity:.38,duration:.3,ease:'power2.out'},at+.3);
     });
     var end=.8+lis.length*.85+.9;
-    tl.to(flash,{opacity:1,duration:.12},end);
+    
     tl.to(cut,{opacity:0,duration:.01},end+.12);
-    tl.to(flash,{opacity:0,duration:.5},end+.14);
-    tl.to(ws,{opacity:1,z:0,rotationY:0,stagger:.12,duration:.7,ease:'power3.out'},end+.3);
+    
+    tl.to(ws,{opacity:1,z:0,rotationY:0,stagger:.1,duration:.9,ease:'expo.out'},end+.3);
     say.querySelectorAll('.rl i').forEach(function(n,k){g.fromTo(n,{y:70},{y:-30,ease:'none',scrollTrigger:{trigger:n,start:'top bottom',end:'bottom top',scrub:.6}})});
     g.from(say.querySelectorAll('.rl h3,.rl span'),{y:30,opacity:0,duration:.8,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.say-rail',start:'top 78%'}});
   }
