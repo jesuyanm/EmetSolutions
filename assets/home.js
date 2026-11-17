@@ -56,11 +56,10 @@
       for(var y=0;y<HC;y+=stp)for(var x=0;x<WC;x+=stp)if(d[(y*WC+x)*4+3]>140)ps.push([x-WC/2,-(y-HC/2+8),x>x0+wmain]);
       var M=ps.length,sc2=(mobile?1300:2300)/tw;
       var wp=new Float32Array(M*3),wt=new Float32Array(M*3),wv=new Float32Array(M*3),wc=new Float32Array(M*3),wz=new Float32Array(M);
-      var li=new T.Color('#ff8a3d'),pa=new T.Color('#ece7dc');
-      var ymin=1e9,ymax=-1e9,cc=new T.Color();for(var k0=0;k0<M;k0++){var yy=ps[k0][1];if(yy<ymin)ymin=yy;if(yy>ymax)ymax=yy}var yr=ymax-ymin;
+      var li=new T.Color('#d4ff3a'),pa=new T.Color('#ece7dc');
       for(var i2=0;i2<M;i2++){var j=i2*3;wt[j]=ps[i2][0]*sc2;wt[j+1]=WY+ps[i2][1]*sc2;wt[j+2]=WZ+(Math.random()-.5)*60;
         var a1=Math.random()*6.283,rr2=600+Math.random()*1800;wp[j]=Math.cos(a1)*rr2;wp[j+1]=WY+Math.sin(a1)*rr2*.5;wp[j+2]=WZ-400-Math.random()*1600;
-        var tt=Math.min(1,Math.max(0,(ps[i2][1]-ymin)/(yr||1)));tt=ps[i2][2]?Math.max(tt,.7):tt*tt;cc.copy(pa).lerp(li,tt);wc[j]=cc.r*1.5;wc[j+1]=cc.g*1.5;wc[j+2]=cc.b*1.5;wz[i2]=7+Math.random()*6}
+        var cc=ps[i2][2]||Math.random()<.2?li:pa;wc[j]=cc.r*1.5;wc[j+1]=cc.g*1.5;wc[j+2]=cc.b*1.5;wz[i2]=7+Math.random()*6}
       var wg=new T.BufferGeometry();wg.setAttribute('position',new T.BufferAttribute(wp,3));wg.setAttribute('color',new T.BufferAttribute(wc,3));wg.setAttribute('size',new T.BufferAttribute(wz,1));
       var wm=new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,uniforms:{hp:{value:innerHeight*pr},a:{value:0}},
         vertexShader:'attribute float size;attribute vec3 color;varying vec3 vc;uniform float hp;void main(){vc=color;vec4 mv=modelViewMatrix*vec4(position,1.);gl_PointSize=min(size*projectionMatrix[1][1]*hp*.5/-mv.z,46.);gl_Position=projectionMatrix*mv;}',
