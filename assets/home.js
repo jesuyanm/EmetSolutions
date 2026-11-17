@@ -120,7 +120,14 @@
     requestAnimationFrame(loop);
   }
   var fontsOk=document.fonts&&document.fonts.load?Promise.race([document.fonts.load('400 100px "Instrument Serif"'),new Promise(function(r){setTimeout(r,1500)})]).catch(function(){}):Promise.resolve();
-  fontsOk.then(function(){if(window.THREE)hero();else addEventListener('load',hero)});
+  /* Three.js (~150 KB over the wire) loads after the page has painted, so text and layout come first */
+  function loadThree(cb){
+    if(window.THREE){cb();return}
+    var go=function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js';s.onload=cb;document.head.appendChild(s)};
+    var later=function(){(window.requestIdleCallback||function(f){setTimeout(f,200)})(go,{timeout:1500})};
+    if(document.readyState==='complete')later();else addEventListener('load',later)
+  }
+  fontsOk.then(function(){loadThree(function(){T=window.THREE;hero()})});
 
   /* ---------- showcase: the real Degner site, scrolled by the visitor ---------- */
   var stage=document.getElementById('showStage');
