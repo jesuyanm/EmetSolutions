@@ -645,3 +645,11 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
 
 /* footer: two columns now the logo and tagline are gone */
 @media(min-width:901px){.fgrid{grid-template-columns:1fr 1fr;max-width:560px}}
+
+/* footer: wordmark on the left, links on the right */
+@media(min-width:901px){
+  footer.site>.wrap{display:grid;grid-template-columns:1fr auto;grid-template-areas:"mark links" "copy copy";align-items:end;column-gap:clamp(40px,8vw,140px)}
+  footer.site .wordmark{grid-area:mark;margin:0}
+  footer.site .fgrid{grid-area:links;max-width:none;grid-template-columns:auto auto;gap:clamp(40px,6vw,96px);align-self:start}
+  footer.site .copy{grid-area:copy}
+}
