@@ -540,3 +540,24 @@ html.introing .hero::before{opacity:0}
 .pf-a,.pf-a.on{transform:none!important}
 .pf-a{transition:opacity .35s!important}
 
+
+/* interaction polish: press feedback, hover only on real pointers, one easing */
+:root{--ease:cubic-bezier(.23,1,.32,1)}
+html{-webkit-tap-highlight-color:transparent}
+.btn,.cta,.pf-q,.sh-chap button,.pf-go,.more-link a,.sh-go{touch-action:manipulation}
+.btn{transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .16s var(--ease)}
+.btn:hover{transform:none;box-shadow:none}
+.btn span{transition:transform .25s var(--ease)}
+@media(hover:hover) and (pointer:fine){
+  .btn:hover{background:var(--paper);border-color:var(--paper);color:var(--accent-ink)}
+  .btn.ghost:hover{background:var(--paper);color:var(--bg)}
+  .btn:hover span{transform:translateX(4px)}
+}
+.btn:active,.cta:active{transform:scale(.97)}
+.pf-q{transition:color .2s var(--ease),transform .16s var(--ease)}
+.pf-q:active{transform:scale(.985)}
+.sh-chap button{transition:color .2s var(--ease),transform .16s var(--ease)}
+.sh-chap button:active{transform:scale(.98)}
+.pf-go i,.sh-go i{display:inline-block;transition:transform .25s var(--ease)}
+@media(hover:hover) and (pointer:fine){.pf-go:hover i,.sh-go:hover i{transform:translateX(4px)}}
+.btn:focus-visible,.pf-q:focus-visible,.sh-chap button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
