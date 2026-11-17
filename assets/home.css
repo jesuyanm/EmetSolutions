@@ -503,3 +503,39 @@ html.introing .hero::before{opacity:0}
 .say-paper .say-line{font-size:clamp(2.8rem,min(8.2vw,15vh),7.4rem)!important}
 .cut li{font-size:clamp(1.15rem,min(3.2vw,5.6vh),2.7rem)!important}
 .step3d,.pf-q{font-size:inherit}
+
+/* picker, calmer and bigger: no card, the answer sits straight on the page */
+.doors{padding-block:clamp(48px,7vh,88px)!important}
+.doors .eyebrow{margin-bottom:clamp(18px,3vh,32px)}
+.pf{grid-template-columns:1.2fr 1fr!important;gap:clamp(32px,6vw,110px)!important;align-items:center!important;margin:0!important}
+.pf-q{font-size:clamp(1.6rem,2.7vw,2.7rem)!important;padding:clamp(12px,1.8vh,20px) 0!important;letter-spacing:-.03em!important}
+.pf-q.on{box-shadow:none!important;padding-left:0!important;transform:none!important}
+.pf-q::after{content:"";margin-left:auto;align-self:center;width:34px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pf-q.on::after{transform:scaleX(1)}
+.pf-ans{border:0!important;background:none!important;box-shadow:none!important;padding:0 0 0 clamp(20px,3vw,48px)!important;border-left:1px solid var(--line-2)!important;border-radius:0!important;min-height:300px!important;transform:none!important}
+.pf-a{inset:0 0 0 clamp(20px,3vw,48px)!important;transform:translateY(18px)!important;transition:opacity .4s,transform .7s cubic-bezier(.2,.8,.2,1)!important}
+.pf-a.on{transform:none!important}
+.pf-a h3{font:400 clamp(2.1rem,3.4vw,3.5rem)/1 var(--serif)!important;letter-spacing:-.04em!important;margin:0 0 .6em!important}
+.pf-a ul{font-size:1.05rem!important;gap:.5em!important;margin-bottom:1.4em!important}
+.pf-k{display:none!important}
+@media(max-width:860px){.pf{grid-template-columns:1fr!important}.pf-ans{border-left:0!important;padding:0!important;border-top:1px solid var(--line-2)!important;padding-top:1.4rem!important;min-height:300px!important}.pf-a{inset:1.4rem 0 0 0!important}}
+
+.doors .more-link{margin-top:clamp(28px,4vh,44px)!important;position:relative}
+.pf-q{font-size:clamp(1.5rem,2.3vw,2.4rem)!important}
+.pf-ans{min-height:260px!important}
+
+.pf>.pf-list,.pf>.pf-ans{margin:0!important;align-self:start}
+
+/* statement, calm layout: normal flow */
+.say-paper{clip-path:none!important}
+.say-paper .cut{display:block!important;position:static!important;padding:clamp(48px,8vh,88px) 28px 0!important;transform:none!important}
+.say-paper .cut ul{transform:none!important}
+.say-paper .cut li{transform:none!important}
+.say-paper .cut li .bar{transform:scaleX(1)}
+.say-stage{min-height:0!important;display:block!important;overflow:visible!important;perspective:none!important}
+.say-stage>.wrap{padding-block:clamp(40px,7vh,80px) clamp(24px,4vh,48px)}
+.say-paper .say-line .w{opacity:1!important;transform:none!important}
+.pf-list,.pf-ans{transform:none!important}
+.pf-q.on{transform:none!important}
+.pf-a,.pf-a.on{transform:none!important}
+.pf-a{transition:opacity .35s!important}

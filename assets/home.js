@@ -189,37 +189,19 @@
     }
     if(g&&ST&&!reduced)g.from(pf.children,{y:40,opacity:0,duration:.9,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:pf,start:'top 85%'}});
   }
-  /* ---------- statement scene ---------- */
+  /* ---------- statement: calm. list strikes once, then the sentence fades up. no pin, no 3D ---------- */
   var say=document.getElementById('say');
-  if(say&&g&&ST&&!reduced){
-    var ws=[].slice.call(say.querySelectorAll('.say-line .w')),stg=say.querySelector('.say-stage'),cut=say.querySelector('.cut'),lis=[].slice.call(say.querySelectorAll('.cut li')),flash=document.createElement('i');
-    say.classList.add('fx');flash.className='cut-flash';stg.appendChild(flash);
-    g.set(ws,{opacity:0,z:-900,rotationY:55,transformOrigin:'50% 50%'});
-    g.fromTo(say,{clipPath:'circle(0% at 50% 62%)'},{clipPath:'circle(150% at 50% 62%)',ease:'none',scrollTrigger:{trigger:say,start:'top 96%',end:'top 8%',scrub:.5}});
-    var tl=g.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:stg,start:'top top',end:'+=130%',pin:true,scrub:.6}});
-    tl.from(cut,{opacity:0,y:40,duration:.6},0);
-    lis.forEach(function(li,i){
-      var at=.5+i*.55;
-      tl.to(li,{'--s':1,duration:.01},at);
-      tl.fromTo(li,{x:0},{x:0,duration:.01},at);
-      tl.to(li,{z:-1400,rotationX:42,rotationZ:i%2?-4:4,opacity:0,duration:.7,ease:'power3.in'},at+.55);
-      tl.fromTo(li,{scaleX:1},{scaleX:1,duration:.01},at);
-      tl.set(li,{className:'+=struck'},at+.3);
-    });
-    g.set(lis,{});
-    /* sweep each strike bar with the timeline using inline transforms on the pseudo via a child element */
-    lis.forEach(function(li,i){var bar=document.createElement('b');bar.className='bar';li.appendChild(bar);
-      var at=.5+i*.55;
-      tl.fromTo(bar,{scaleX:0},{scaleX:1,duration:.45,ease:'expo.out'},at);
-      tl.to(li.querySelector('span'),{opacity:.38,duration:.3,ease:'power2.out'},at+.3);
-    });
-    var end=.5+lis.length*.55+.5;
-    
-    tl.to(cut,{opacity:0,duration:.01},end+.12);
-    
-    tl.to(ws,{opacity:1,z:0,rotationY:0,stagger:.07,duration:.7,ease:'expo.out'},end+.3);
-    say.querySelectorAll('.rl i').forEach(function(n,k){g.fromTo(n,{y:70},{y:-30,ease:'none',scrollTrigger:{trigger:n,start:'top bottom',end:'bottom top',scrub:.6}})});
-    g.from(say.querySelectorAll('.rl h3,.rl span'),{y:30,opacity:0,duration:.8,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.say-rail',start:'top 78%'}});
+  if(say){
+    var lis=[].slice.call(say.querySelectorAll('.cut li')),line=say.querySelector('.say-line');
+    lis.forEach(function(li){var bar=document.createElement('b');bar.className='bar';li.appendChild(bar)});
+    if(g&&ST&&!reduced){
+      say.classList.add('calm');
+      g.set(line,{opacity:0,y:24});
+      var tl=g.timeline({scrollTrigger:{trigger:say.querySelector('.cut'),start:'top 65%',once:true}});
+      lis.forEach(function(li,i){tl.fromTo(li.querySelector('.bar'),{scaleX:0},{scaleX:1,duration:.5,ease:'power2.out'},i*.22);tl.to(li.querySelector('span'),{opacity:.4,duration:.3},i*.22+.3)});
+      g.to(line,{opacity:1,y:0,duration:.9,ease:'power2.out',scrollTrigger:{trigger:line,start:'top 80%',once:true}});
+      g.from(say.querySelectorAll('.rl'),{y:20,opacity:0,duration:.7,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:'.say-rail',start:'top 85%',once:true}});
+    }else lis.forEach(function(li){li.querySelector('span').style.opacity=.4;li.querySelector('.bar').style.transform='none'});
   }
   /* no scrolling while the intro plays */
   (function(){
