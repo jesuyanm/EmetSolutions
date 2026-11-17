@@ -653,3 +653,11 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
   footer.site .fgrid{grid-area:links;max-width:none;grid-template-columns:auto auto;gap:clamp(40px,6vw,96px);align-self:start}
   footer.site .copy{grid-area:copy}
 }
+
+@media(min-width:901px){
+  footer.site{padding-block:56px 24px!important}
+  footer.site .fgrid{align-self:end;margin-bottom:.9rem}
+  footer.site .fgrid li{margin-bottom:.4em}
+  footer.site .fgrid h4{margin-bottom:.9em}
+  footer.site .wordmark{line-height:.8;margin-bottom:-.05em}
+}
