@@ -387,3 +387,41 @@ html.introing .hero::before{opacity:0}
 @media(max-width:760px){.sh-phone{width:30cqw!important;right:-12cqw!important}.show-stage{width:min(calc(100% / 1.14),100%)!important}}
 
 @media(min-width:1000px){.show>.wrap{max-width:1560px!important}}
+
+/* degner: keep the text on the page margins */
+@media(min-width:1000px){.show>.wrap{max-width:var(--max)!important;grid-template-columns:minmax(230px,285px) 1fr!important}}
+
+/* statement + commitments */
+.say{padding-block:clamp(56px,8vw,104px)!important}
+.say-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.say .say-line{font:400 clamp(2.3rem,4.4vw,4.1rem)/1.04 var(--serif);letter-spacing:-.035em;max-width:17ch;margin:0}
+.say-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-2)}
+.say-list li{display:grid;grid-template-columns:2.2rem 1fr;gap:.4rem;padding:1.15rem 0;border-bottom:1px solid var(--line-2)}
+.say-list span{font:500 .72rem var(--mono);letter-spacing:.14em;color:var(--accent);padding-top:.35rem}
+.say-list b{display:block;font:500 1.25rem/1.2 var(--sans);letter-spacing:-.02em;color:var(--paper)}
+.say-list p{margin:.3rem 0 0;color:var(--soft);font-size:1rem;max-width:34ch}
+@media(max-width:900px){.say-grid{grid-template-columns:1fr}}
+
+/* contact band: ask on the left, what happens next on the right */
+.band::after{content:none!important}
+.band-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.band-l h2{font-size:clamp(2.8rem,6vw,5.2rem)!important;max-width:10ch!important;margin-bottom:.35em}
+.band-l p{margin:0 0 1.2em}
+.band-l .band-mail{margin:1.1em 0 0;font:500 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(11,11,9,.7)}
+.band-l .band-mail a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--accent-ink)}
+.band-steps{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--accent-ink)}
+.band-steps li{display:grid;grid-template-columns:2.2rem 1fr;column-gap:.4rem;padding:1.05rem 0;border-bottom:1px solid rgba(11,11,9,.28)}
+.band-steps span{grid-row:span 2;font:600 .82rem var(--mono);color:var(--accent-ink);padding-top:.25rem}
+.band-steps b{font:600 1.15rem/1.2 var(--sans);letter-spacing:-.015em;color:var(--accent-ink)}
+.band-steps em{font-style:normal;font-size:.98rem;color:rgba(11,11,9,.72);margin-top:.15rem}
+@media(max-width:900px){.band-grid{grid-template-columns:1fr}}
+
+.say .say-list p{font:400 1rem/1.45 var(--sans)!important;letter-spacing:0!important;max-width:34ch!important;color:var(--soft)}
+.sh-side .sh-chap button{grid-template-columns:1.9rem 1fr!important}
+.sh-side .sh-chap em{grid-column:2}
+
+/* phone like the original drawn mockup: soft 20px-ratio corners, flat pill island, small camera dot inside it */
+.sh-phone{border-radius:3.5cqw!important;padding:.9cqw!important}
+.sh-pscr{border-radius:2.7cqw!important}
+.sh-phone::after{top:calc(.9cqw + 1.4%)!important;width:31%!important;height:3.9%!important}
+.sh-phone::before{content:"";position:absolute;z-index:6;top:calc(.9cqw + 1.4% + 1.95%);left:calc(50% + 10.5%);width:.9cqw;height:.9cqw;margin:-.45cqw 0 0 -.45cqw;border-radius:50%;background:radial-gradient(circle,#2a3a52 0,#10161f 55%,#000 100%)}
