@@ -401,11 +401,11 @@ html.introing .hero::before{opacity:0}
 .band-l p{margin:0 0 1.2em}
 .band-l .band-mail{margin:1.1em 0 0;font:500 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(11,11,9,.7)}
 .band-l .band-mail a{color:var(--accent-ink);text-decoration:none;border-bottom:1px solid var(--accent-ink)}
-.band-steps{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--accent-ink)}
-.band-steps li{display:grid;grid-template-columns:2.2rem 1fr;column-gap:.4rem;padding:1.05rem 0;border-bottom:1px solid rgba(11,11,9,.28)}
-.band-steps span{grid-row:span 2;font:600 .82rem var(--mono);color:var(--accent-ink);padding-top:.25rem}
-.band-steps b{font:600 1.15rem/1.2 var(--sans);letter-spacing:-.015em;color:var(--accent-ink)}
-.band-steps em{font-style:normal;font-size:.98rem;color:rgba(11,11,9,.72);margin-top:.15rem}
+
+
+
+
+
 @media(max-width:900px){.band-grid{grid-template-columns:1fr}}
 
 
@@ -423,21 +423,19 @@ html.introing .hero::before{opacity:0}
 .say-paper::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;background:radial-gradient(120% 80% at 80% 0%,rgba(212,255,58,.55),transparent 55%),radial-gradient(90% 70% at 0% 100%,rgba(11,11,9,.12),transparent 60%)}
 .say-stage{min-height:100vh;display:flex;align-items:center;position:relative}
 .say-paper .say-line{font:400 clamp(2.8rem,8.2vw,9rem)/.96 var(--serif)!important;letter-spacing:-.045em!important;max-width:15ch!important;margin:0!important;color:var(--ink);text-wrap:balance}
-.say-paper .say-line .w{transition:none!important}
 .say-paper .say-line em{font-style:italic;color:var(--ink)}
-.say-paper .say-line em .w{background:linear-gradient(var(--accent),var(--accent)) 0 86%/100% .3em no-repeat}
 
-.say-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3.5vw,56px);padding-block:clamp(40px,7vw,96px) clamp(64px,9vw,120px);position:relative;border-top:1.5px solid var(--ink)}
-.say-rail .rl{position:relative;padding-top:clamp(70px,9vw,130px)}
-.say-rail .rl i{position:absolute;left:-.04em;top:-.12em;font:400 clamp(6rem,13vw,13rem)/1 var(--serif);font-style:normal;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.3px rgba(11,11,9,.55);pointer-events:none}
-.say-rail h3{position:relative;font:600 clamp(1.25rem,1.8vw,1.7rem)/1.15 var(--sans);letter-spacing:-.025em;margin:0 0 .5rem;color:var(--ink)}
-.say-rail span{position:relative;display:block;font-size:1.05rem;line-height:1.45;color:rgba(11,11,9,.72);max-width:30ch}
-@media(max-width:900px){.say-rail{grid-template-columns:1fr}.say-rail .rl{padding-top:90px}.say-stage{min-height:78vh}}
+
+
+
+
+
+@media(max-width:900px){.say-stage{min-height:78vh}}
 
 .say-stage>.wrap{width:100%}
-.say-rail .rl{padding-top:clamp(110px,12vw,170px)}
-.say-rail .rl i{top:-.02em}
-@media(max-width:900px){.say-rail .rl{padding-top:120px}}
+
+
+
 
 /* the cut: a list of things you could be sold gets struck out, then the promise appears */
 
@@ -458,9 +456,9 @@ html.introing .hero::before{opacity:0}
 .cut ul{transform-style:preserve-3d;transform:rotateY(-9deg) rotateX(4deg);transform-origin:0 50%}
 
 /* calmer, less template-y */
-.say-rail .rl{padding-top:1.4rem!important;border-top:1px solid rgba(11,11,9,.35)}
-.say-rail{border-top:0!important;gap:clamp(24px,4vw,64px)!important}
-.say-rail h3{font:600 clamp(1.15rem,1.5vw,1.4rem)/1.2 var(--sans)}
+
+
+
 .cut li .bar{box-shadow:none!important;height:.5em;margin-top:-.2em}
 .cut li{font-weight:500!important}
 
@@ -469,14 +467,14 @@ html.introing .hero::before{opacity:0}
 .cut li{letter-spacing:-.04em}
 
 .say-stage{min-height:88vh!important}
-.say-rail{padding-block:clamp(24px,3.5vw,44px) clamp(40px,5vw,64px)!important}
-.say-rail .rl{padding-top:1rem!important}
-.say-rail span{font-size:1rem}
+
+
+
 
 /* hero: one confident line, centred over the field; Degner proof sits directly below so the strip goes */
 .hero{min-height:calc(100vh - 73px);display:flex;align-items:center;text-align:center}
 .hero .hero-grid>*{max-width:none!important;margin-inline:auto}
-.hero .eyebrow,.hero .hero-proof{display:none!important}
+.hero .eyebrow{display:none!important}
 .hero h1{font-size:clamp(3.4rem,10.5vw,10.5rem)!important;line-height:.9!important;letter-spacing:-.05em!important;margin:0 auto .28em!important;max-width:12ch}
 .hero h1 em{display:block}
 .hero .lead{font-size:clamp(1.05rem,1.6vw,1.4rem)!important;margin:0 auto 1.8rem!important;max-width:34ch;color:var(--soft)}
@@ -522,7 +520,6 @@ html.introing .hero::before{opacity:0}
 .say-paper .cut li .bar{transform:scaleX(1)}
 .say-stage{min-height:0!important;display:block!important;overflow:visible!important;perspective:none!important}
 .say-stage>.wrap{padding-block:clamp(40px,7vh,80px) clamp(24px,4vh,48px)}
-.say-paper .say-line .w{opacity:1!important;transform:none!important}
 .pf-list,.pf-ans{transform:none!important}
 .pf-q.on{transform:none!important}
 .pf-a,.pf-a.on{transform:none!important}
@@ -553,12 +550,11 @@ html{-webkit-tap-highlight-color:transparent}
 /* statement + band: smaller, calmer type; sans for the sentence */
 .say-paper .say-line{font:600 clamp(1.9rem,min(3.9vw,7.2vh),3.5rem)/1.08 var(--sans)!important;letter-spacing:-.035em!important;max-width:24ch!important}
 .say-paper .say-line em{font-style:normal}
-.say-paper .say-line em .w{background-size:100% .26em}
 .cut li{font-size:clamp(1rem,min(2.1vw,4vh),1.7rem)!important;font-weight:500!important}
-.say-rail h3{font-size:clamp(1.05rem,1.3vw,1.25rem)}
-.say-rail span{font-size:.95rem}
+
+
 .band-l h2{font-size:clamp(2.3rem,min(4.4vw,8vh),3.8rem)!important;max-width:11ch!important}
-.band-steps b{font-size:1.05rem}.band-steps em{font-size:.93rem}
+
 
 /* hero headline: looser tracking so letters stop touching, a size down */
 .hero h1{font-size:clamp(3rem,min(8.2vw,14vh),7.4rem)!important;line-height:1!important;letter-spacing:-.018em!important;font-kerning:normal;text-rendering:optimizeLegibility;margin-bottom:.32em!important}
@@ -592,9 +588,9 @@ header.site.scrolled{background:rgba(11,11,9,.78)!important;-webkit-backdrop-fil
 .cut ul{counter-reset:cut}
 .cut li{counter-increment:cut}
 .cut li::before{content:counter(cut,decimal-leading-zero);display:inline-block;min-width:2.4em;margin-right:.5em;font:500 .42em/1 var(--mono);letter-spacing:.08em;color:rgba(11,11,9,.55);vertical-align:.45em}
-.say-rail{counter-reset:rl}
-.say-rail .rl{counter-increment:rl}
-.say-rail .rl::before{content:counter(rl,decimal-leading-zero);display:inline-block;margin-bottom:.9rem;padding:4px 8px;background:var(--accent);color:var(--accent-ink);font:600 .72rem/1 var(--mono);letter-spacing:.1em}
+
+
+
 .cut li::before{font-size:.55em;min-width:2.2em;margin-right:.5em;vertical-align:.3em;color:rgba(11,11,9,.62)}
 .cut li .bar{left:1.5em!important}
 
@@ -614,20 +610,20 @@ header.site.scrolled{background:rgba(11,11,9,.78)!important;-webkit-backdrop-fil
 .band-l p:not(.band-mail){grid-column:2;margin:0 0 1rem;max-width:30ch}
 .band-l .btn{grid-column:2;justify-self:start}
 .band-l .band-mail{grid-column:2;margin:.9rem 0 0}
-.band-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,36px);border-top:1px solid var(--line-2)}
-.band-steps li{display:block;padding:1.2rem 0 0;border-bottom:0}
-.band-steps span{display:block;font:600 .75rem var(--mono);color:var(--accent);letter-spacing:.1em;padding:0;margin-bottom:.7rem}
-.band-steps span::before{content:"0"}
-.band-steps b{display:block;color:var(--paper);font-size:1.05rem}
-.band-steps em{display:block;color:var(--muted)}
-@media(max-width:900px){.band-l{grid-template-columns:1fr}.band-l h2{grid-row:auto}.band-l p:not(.band-mail),.band-l .btn,.band-l .band-mail{grid-column:1;margin-top:1rem}.band-steps{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.band-steps{grid-template-columns:1fr}}
+
+
+
+
+
+
+@media(max-width:900px){.band-l{grid-template-columns:1fr}.band-l h2{grid-row:auto}.band-l p:not(.band-mail),.band-l .btn,.band-l .band-mail{grid-column:1;margin-top:1rem}}
+
 footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft:#3f3a30;--muted:#5d584c;--line:rgba(11,11,9,.16);--line-2:rgba(11,11,9,.3);color:#0b0b09}
 
 /* statement without lime: neutral paper, ink chips, ink underline */
 .say-paper::before{background:radial-gradient(90% 70% at 0% 100%,rgba(11,11,9,.12),transparent 60%)}
-.say-rail .rl::before{background:var(--ink);color:#ece7dc}
-.say-paper .say-line em .w{background:none;text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.12em}
+
+.say-paper .say-line em{text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.12em}
 
 /* hero headline in the site serif (Instrument Serif), upright, wide two-line */
 .hero h1{font-family:var(--serif)!important;font-weight:400!important;letter-spacing:-.01em!important;line-height:.98!important}
@@ -678,3 +674,8 @@ footer.site{background:#ece7dc!important;--paper:#0b0b09;--accent:#4a5f00;--soft
 
 /* statement ends with the sentence now that the three-column row is gone */
 .say-paper .say-stage{padding-bottom:clamp(40px,6vw,88px)}
+
+/* intro hand-off: the page eases in instead of snapping */
+.hero .wrap{transition:opacity 1.4s var(--ease),transform 1.6s var(--ease)}
+header.site{transition:opacity 1.4s var(--ease),background-color .3s var(--ease),border-color .3s var(--ease)}
+.intro2{transition:opacity .8s ease}

@@ -7,9 +7,11 @@ if (burger && menu) {
   });
 }
 
-// scroll reveal and card spotlight
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// scroll reveal for list items
 document.documentElement.classList.add('js');
-const revealEls = document.querySelectorAll('.card,.step,.svc,.row,.section-head,.checks li,.proof li,.stats .wrap>div');
+const revealEls = document.querySelectorAll('.checks li');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
@@ -69,39 +71,6 @@ if (form) {
 }
 
 
-// count-up stats
-const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-document.querySelectorAll('[data-count]').forEach((el) => {
-  if (reduce || !('IntersectionObserver' in window)) return;
-  const end = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
-  const io2 = new IntersectionObserver(([en]) => {
-    if (!en.isIntersecting) return;
-    io2.disconnect();
-    const t0 = performance.now();
-    const tick = (t) => {
-      const p = Math.min((t - t0) / 1200, 1);
-      el.textContent = pre + Math.round(end * (1 - Math.pow(1 - p, 3))) + suf;
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  });
-  io2.observe(el);
-});
-
-
-
-// open the service named in the URL hash
-function openFromHash() {
-  const el = location.hash && document.querySelector(location.hash);
-  if (el && el.tagName === 'DETAILS') {
-    el.open = true;
-    for (let p = el.parentElement; p; p = p.parentElement) if (p.tagName === 'DETAILS') p.open = true;
-    setTimeout(() => el.scrollIntoView({ block: 'start' }), 0);
-  }
-}
-openFromHash();
-addEventListener('hashchange', openFromHash);
-
 // scroll: header border + progress bar, one throttled handler
 (function () {
   const hdr = document.querySelector('header.site');
@@ -123,46 +92,6 @@ addEventListener('hashchange', openFromHash);
   document.addEventListener('toggle', measure, true);
   measure();
 })();
-
-// statement: split into words and reveal on scroll
-(function wordSplit() {
-  const say = document.querySelector('.say p');
-  if (!say) return;
-  let i = 0;
-  const split = (node) => {
-    [...node.childNodes].forEach((n) => {
-      if (n.nodeType === 3) {
-        const frag = document.createDocumentFragment();
-        n.textContent.split(/(\s+)/).forEach((part) => {
-          if (!part) return;
-          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
-          const s = document.createElement('span');
-          s.className = 'w'; s.style.setProperty('--i', i++); s.textContent = part;
-          frag.appendChild(s);
-        });
-        n.replaceWith(frag);
-      } else if (n.nodeType === 1) split(n);
-    });
-  };
-  split(say);
-  const sec = say.closest('.say');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(([en]) => { if (en.isIntersecting) { sec.classList.add('in'); io.disconnect(); } }, { threshold: 0.3 });
-    io.observe(sec);
-  } else sec.classList.add('in');
-})();
-
-
-// cards: draw illustrations when they scroll into view
-(function pickDraw() {
-  const picks = document.querySelectorAll('.pick');
-  if (!picks.length) return;
-  if (!('IntersectionObserver' in window)) { picks.forEach((p) => p.classList.add('in')); return; }
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.25 });
-  picks.forEach((p) => io.observe(p));
-})();
-
-
 
 // headline words rise out of a mask
 (function maskWords() {
@@ -188,24 +117,6 @@ addEventListener('hashchange', openFromHash);
   });
 })();
 
-
-
-// hero: gentle pointer parallax
-(function heroParallax() {
-  const hero = document.querySelector('.hero');
-  if (!hero || window.matchMedia('(pointer: coarse)').matches || reduce) return;
-  let raf = 0;
-  hero.addEventListener('pointermove', (e) => {
-    if (raf) return;
-    raf = requestAnimationFrame(() => {
-      raf = 0;
-      const r = hero.getBoundingClientRect();
-      hero.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
-      hero.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
-    });
-  });
-})();
-
 // lime wipe: plays on the first page change of a visit only
 (function pageWipe() {
   try { sessionStorage.removeItem('wipe'); } catch (e) {}
@@ -226,8 +137,6 @@ addEventListener('hashchange', openFromHash);
   addEventListener('pageshow', (e) => { if (e.persisted) document.documentElement.classList.remove('leaving'); });
 })();
 
-
-
 // about: hover replays the path animation
 (function alphaReplay() {
   const art = document.querySelector('.art-path');
@@ -244,47 +153,3 @@ addEventListener('hashchange', openFromHash);
   });
 })();
 
-// about: letter story steps with scroll; statement lights up word by word
-(function aboutMotion() {
-  const story = document.querySelector('.a-story');
-  if (story) {
-    const upd = () => {
-      if (innerWidth <= 760) return;
-      const r = story.getBoundingClientRect();
-      const pane = innerHeight - 88;
-      const total = story.offsetHeight - pane;
-      const p = Math.min(0.999, Math.max(0, (88 - r.top) / total));
-      story.dataset.step = Math.floor(p * 3);
-    };
-    addEventListener('scroll', upd, { passive: true });
-    addEventListener('resize', upd);
-    upd();
-  }
-  const big = document.querySelector('.a-big');
-  if (big && !reduce) {
-    const wrap = (node) => {
-      [...node.childNodes].forEach((n) => {
-        if (n.nodeType === 3) {
-          const f = document.createDocumentFragment();
-          n.textContent.split(/(\s+)/).forEach((s) => {
-            if (!s) return;
-            if (/^\s+$/.test(s)) f.appendChild(document.createTextNode(s));
-            else { const w = document.createElement('span'); w.className = 'w'; w.textContent = s; f.appendChild(w); }
-          });
-          node.replaceChild(f, n);
-        } else if (n.nodeType === 1) wrap(n);
-      });
-    };
-    wrap(big);
-    const words = big.querySelectorAll('.w');
-    const update = () => {
-      const r = big.getBoundingClientRect(), vh = innerHeight;
-      const p = Math.min(1, Math.max(0, (vh * 0.92 - r.top) / (vh * 0.5)));
-      const k = Math.round(p * words.length);
-      words.forEach((w, i) => w.classList.toggle('on', i < k));
-    };
-    addEventListener('scroll', update, { passive: true });
-    addEventListener('resize', update);
-    update();
-  }
-})();
