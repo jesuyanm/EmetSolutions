@@ -1,5 +1,5 @@
 /* Shared layer for the inner pages: matches the home page (header blur, numbered offers, dark contact band, cream footer) */
-:root{--ease:cubic-bezier(.23,1,.32,1);--warm:#12140c}
+:root{--ease:cubic-bezier(.23,1,.32,1);--warm:#0b0b09}
 html{-webkit-tap-highlight-color:transparent}
 
 /* header: dark glass once scrolled */

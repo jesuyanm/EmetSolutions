@@ -608,7 +608,7 @@ header.site.scrolled{background:rgba(11,11,9,.78)!important;-webkit-backdrop-fil
 
 
 /* dark olive tone: picker on its own tone; contact band dark with a step row; cream footer */
-:root{--accent:#d4ff3a;--accent-ink:#0b0b09;--warm:#12140c}
+:root{--accent:#d4ff3a;--accent-ink:#0b0b09;--warm:#0b0b09}
 .band,.band.tight{background:var(--warm)!important;color:var(--paper)!important}
 .band h2,.band-l h2{color:var(--paper)!important}
 .band p,.band-l p{color:var(--soft)!important}
