@@ -340,3 +340,33 @@ html.introing .hero::before{opacity:0}
 .im-chin .sh-built{font-size:.95cqw!important;padding:.3em .9em!important}
 .im-neck{width:5.5cqw!important;height:8cqw!important}
 .im-base{width:19cqw!important;height:1cqw!important}
+
+/* degner: side text column + mockup */
+.show-head,.sh-fig{display:none!important}
+@media(min-width:1000px){
+ .show>.wrap{display:grid!important;grid-template-columns:minmax(250px,320px) 1fr;gap:clamp(24px,3.5vw,56px);align-items:center}
+ .show-stage{width:min(100%,calc((100vh - 200px)*1.12))!important;justify-self:center}
+}
+.sh-side{display:flex;flex-direction:column;gap:0}
+.sh-side .eyebrow{margin:0 0 .9rem}
+.sh-side h2{font:400 clamp(2.3rem,3.5vw,3.4rem)/.98 var(--serif);letter-spacing:-.035em;margin:0 0 1rem}
+.sh-copy{margin:0 0 1.6rem;color:var(--soft);font-size:1rem;line-height:1.5;max-width:30ch}
+.sh-side .sh-chap{display:grid!important;grid-template-columns:1fr!important;margin:0 0 1.5rem!important;border-top:1px solid var(--line-2)!important}
+.sh-side .sh-chap button{display:grid!important;grid-template-columns:1.9rem auto 1fr;align-items:baseline;gap:0 .5rem;padding:.8rem 0 .8rem 14px!important;border-bottom:1px solid var(--line-2)!important;position:relative;opacity:.5}
+.sh-side .sh-chap button.on,.sh-side .sh-chap button:hover{opacity:1}
+.sh-side .sh-chap button::before{display:block!important;content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.sh-side .sh-chap button.on::before{transform:scaleY(1)}
+.sh-side .sh-chap b{font-size:clamp(1.3rem,1.8vw,1.7rem)}
+.sh-side .sh-chap em{font-size:.82rem;opacity:.8}
+.sh-go{align-self:flex-start;font:500 .78rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--paper);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:3px}
+.sh-go:hover{color:var(--accent)}
+@media(max-width:999px){.sh-side{margin-bottom:2rem}.sh-side .sh-chap button{grid-template-columns:1.9rem 1fr}.sh-side .sh-chap em{grid-column:2}}
+
+/* degner side text: Inter Tight (the site's sans) instead of the serif, tighter and heavier like Apple product pages */
+.sh-side h2{font:600 clamp(2.1rem,3.2vw,3.1rem)/1.02 var(--sans)!important;letter-spacing:-.035em!important}
+.sh-side h2 em{font-style:normal!important;color:var(--accent)}
+.sh-copy{font-family:var(--sans);font-size:1.02rem}
+.sh-side .sh-chap b{font:500 clamp(1.1rem,1.5vw,1.35rem)/1.1 var(--sans)!important;letter-spacing:-.02em!important}
+.sh-side .sh-chap em{font-family:var(--sans)!important}
+
+.sh-side h2 em{color:inherit!important}
